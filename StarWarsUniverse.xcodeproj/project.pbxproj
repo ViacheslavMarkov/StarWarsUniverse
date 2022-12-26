@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D299414295A2A990067ABC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299413295A2A990067ABC2 /* AppDelegate.swift */; };
 		0D299416295A2A990067ABC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299415295A2A990067ABC2 /* SceneDelegate.swift */; };
-		0D299418295A2A990067ABC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299417295A2A990067ABC2 /* ViewController.swift */; };
-		0D29941B295A2A990067ABC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D299419295A2A990067ABC2 /* Main.storyboard */; };
+		0D299418295A2A990067ABC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299417295A2A990067ABC2 /* MainViewController.swift */; };
 		0D29941D295A2A9C0067ABC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941C295A2A9C0067ABC2 /* Assets.xcassets */; };
 		0D299420295A2A9C0067ABC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941E295A2A9C0067ABC2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +18,7 @@
 		0D299410295A2A990067ABC2 /* StarWarsUniverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsUniverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D299413295A2A990067ABC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D299415295A2A990067ABC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0D299417295A2A990067ABC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0D29941A295A2A990067ABC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0D299417295A2A990067ABC2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0D29941C295A2A9C0067ABC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D29941F295A2A9C0067ABC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D299421295A2A9C0067ABC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +54,22 @@
 		0D299412295A2A990067ABC2 /* StarWarsUniverse */ = {
 			isa = PBXGroup;
 			children = (
-				0D299413295A2A990067ABC2 /* AppDelegate.swift */,
-				0D299415295A2A990067ABC2 /* SceneDelegate.swift */,
-				0D299417295A2A990067ABC2 /* ViewController.swift */,
-				0D299419295A2A990067ABC2 /* Main.storyboard */,
-				0D29941C295A2A9C0067ABC2 /* Assets.xcassets */,
-				0D29941E295A2A9C0067ABC2 /* LaunchScreen.storyboard */,
+				0DAA9FEA295A364D0003B501 /* SuportingFiles */,
+				0D299417295A2A990067ABC2 /* MainViewController.swift */,
 				0D299421295A2A9C0067ABC2 /* Info.plist */,
 			);
 			path = StarWarsUniverse;
+			sourceTree = "<group>";
+		};
+		0DAA9FEA295A364D0003B501 /* SuportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0D299413295A2A990067ABC2 /* AppDelegate.swift */,
+				0D299415295A2A990067ABC2 /* SceneDelegate.swift */,
+				0D29941C295A2A9C0067ABC2 /* Assets.xcassets */,
+				0D29941E295A2A9C0067ABC2 /* LaunchScreen.storyboard */,
+			);
+			path = SuportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +133,6 @@
 			files = (
 				0D299420295A2A9C0067ABC2 /* LaunchScreen.storyboard in Resources */,
 				0D29941D295A2A9C0067ABC2 /* Assets.xcassets in Resources */,
-				0D29941B295A2A990067ABC2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D299418295A2A990067ABC2 /* ViewController.swift in Sources */,
+				0D299418295A2A990067ABC2 /* MainViewController.swift in Sources */,
 				0D299414295A2A990067ABC2 /* AppDelegate.swift in Sources */,
 				0D299416295A2A990067ABC2 /* SceneDelegate.swift in Sources */,
 			);
@@ -169,14 +173,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0D299419295A2A990067ABC2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0D29941A295A2A990067ABC2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0D29941E295A2A9C0067ABC2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -314,9 +310,8 @@
 				INFOPLIST_FILE = StarWarsUniverse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -343,9 +338,8 @@
 				INFOPLIST_FILE = StarWarsUniverse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
