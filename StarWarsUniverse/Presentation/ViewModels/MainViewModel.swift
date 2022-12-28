@@ -8,13 +8,22 @@
 import UIKit
 
 protocol MainViewModelDelegate: AnyObject {
+    func didGetPeople()
+    func updateFailed(message: String)
     
+}
+
+protocol MainViewModelProtocol {
+    func getPeople()
+    func getFilterItems() -> [String]
+    
+    var delegate: MainViewModelDelegate? { get set }
 }
 
 typealias Snapshot = NSDiffableDataSourceSnapshot<MainSection, MainSection.Item>
 typealias DataSource = UITableViewDiffableDataSource<MainSection, MainSection.Item>
 
-final class MainViewModel: NSObject {
+final class MainViewModel: MainViewModelProtocol {
     
     weak var delegate: MainViewModelDelegate?
     
@@ -52,6 +61,17 @@ final class MainViewModel: NSObject {
             list.append(item.description)
         }
         return list
+    }
+    
+    func getPeople() {
+        StarWarsService.shared.getPeople(at: 1, completion: { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                self?.delegate?.updateFailed(message: error.localizedDescription)
+            case .success(let response):
+                self?.delegate?.didGetPeople()
+            }
+        })
     }
 }
 

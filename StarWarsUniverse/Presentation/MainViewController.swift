@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    var viewModel: MainViewModel!
+    var viewModel: MainViewModelProtocol!
     
     private let mainView: MainView = {
         let mainView = MainView()
@@ -21,12 +21,17 @@ class MainViewController: UIViewController {
         setupMainView()
         registerCell()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getPeople()
+    }
 }
 
 //MARK: - MainViewController
 private extension MainViewController {
     func setupViewModel() {
-//    viewModel = MainViewModel!
+        viewModel = MainViewModel()
         viewModel.delegate = self
     }
     
@@ -65,5 +70,11 @@ private extension MainViewController {
 
 //MARK: - MainViewModelDelegate
 extension MainViewController: MainViewModelDelegate {
+    func didGetPeople() {
+        print("didGetPeople")
+    }
     
+    func updateFailed(message: String) {
+        print("updateFailed")
+    }
 }
