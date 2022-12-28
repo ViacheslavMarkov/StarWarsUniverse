@@ -12,6 +12,19 @@
 		0D299418295A2A990067ABC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299417295A2A990067ABC2 /* MainViewController.swift */; };
 		0D29941D295A2A9C0067ABC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941C295A2A9C0067ABC2 /* Assets.xcassets */; };
 		0D299420295A2A9C0067ABC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941E295A2A9C0067ABC2 /* LaunchScreen.storyboard */; };
+		0DA0CEFB295B7DCD00B25061 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFA295B7DCD00B25061 /* MainViewModel.swift */; };
+		0DA0CEFD295B7EB000B25061 /* MainSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFC295B7EAF00B25061 /* MainSection.swift */; };
+		0DA0CEFF295B7FEF00B25061 /* StarWarsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFE295B7FEF00B25061 /* StarWarsCellModel.swift */; };
+		0DA0CF02295B816900B25061 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF01295B816900B25061 /* FilterType.swift */; };
+		0DA0CF04295B86F800B25061 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF03295B86F800B25061 /* MainView.swift */; };
+		0DA0CF06295B87D900B25061 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF05295B87D900B25061 /* UIView+Extension.swift */; };
+		0DA0CF08295C8F9D00B25061 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF07295C8F9D00B25061 /* UIStackView+Extension.swift */; };
+		0DA0CF0E295C904C00B25061 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF0D295C904C00B25061 /* UIFont+Extension.swift */; };
+		0DA0CF10295C912200B25061 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0CF0F295C912200B25061 /* Montserrat-Black.ttf */; };
+		0DA0CF12295C913200B25061 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0CF11295C913100B25061 /* Montserrat-Bold.ttf */; };
+		0DA0CF14295C913C00B25061 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0CF13295C913C00B25061 /* Montserrat-ExtraBold.ttf */; };
+		0DA0CF16295C914C00B25061 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0CF15295C914C00B25061 /* Montserrat-Regular.ttf */; };
+		0DA0CF18295C915B00B25061 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DA0CF17295C915B00B25061 /* Montserrat-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +35,19 @@
 		0D29941C295A2A9C0067ABC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D29941F295A2A9C0067ABC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D299421295A2A9C0067ABC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DA0CEFA295B7DCD00B25061 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0DA0CEFC295B7EAF00B25061 /* MainSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSection.swift; sourceTree = "<group>"; };
+		0DA0CEFE295B7FEF00B25061 /* StarWarsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCellModel.swift; sourceTree = "<group>"; };
+		0DA0CF01295B816900B25061 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
+		0DA0CF03295B86F800B25061 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0DA0CF05295B87D900B25061 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		0DA0CF07295C8F9D00B25061 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		0DA0CF0D295C904C00B25061 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		0DA0CF0F295C912200B25061 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		0DA0CF11295C913100B25061 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		0DA0CF13295C913C00B25061 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0DA0CF15295C914C00B25061 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		0DA0CF17295C915B00B25061 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +80,80 @@
 		0D299412295A2A990067ABC2 /* StarWarsUniverse */ = {
 			isa = PBXGroup;
 			children = (
+				0DA0CF00295B809500B25061 /* Presentation */,
 				0DAA9FEA295A364D0003B501 /* SuportingFiles */,
-				0D299417295A2A990067ABC2 /* MainViewController.swift */,
 				0D299421295A2A9C0067ABC2 /* Info.plist */,
 			);
 			path = StarWarsUniverse;
+			sourceTree = "<group>";
+		};
+		0DA0CF00295B809500B25061 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0D299417295A2A990067ABC2 /* MainViewController.swift */,
+				0DA0CF1A295C92D900B25061 /* ViewModels */,
+				0DA0CF0A295C8FCC00B25061 /* Models */,
+				0DA0CF0C295C8FE600B25061 /* Utilities */,
+				0DA0CF0B295C8FDC00B25061 /* Views */,
+				0DA0CF09295C8FB800B25061 /* Extensions */,
+				0DA0CF19295C916800B25061 /* Fonts */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0DA0CF09295C8FB800B25061 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0DA0CF05295B87D900B25061 /* UIView+Extension.swift */,
+				0DA0CF07295C8F9D00B25061 /* UIStackView+Extension.swift */,
+				0DA0CF0D295C904C00B25061 /* UIFont+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0DA0CF0A295C8FCC00B25061 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0DA0CEFE295B7FEF00B25061 /* StarWarsCellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0DA0CF0B295C8FDC00B25061 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0DA0CF03295B86F800B25061 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0DA0CF0C295C8FE600B25061 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0DA0CF01295B816900B25061 /* FilterType.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0DA0CF19295C916800B25061 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0DA0CF11295C913100B25061 /* Montserrat-Bold.ttf */,
+				0DA0CF13295C913C00B25061 /* Montserrat-ExtraBold.ttf */,
+				0DA0CF15295C914C00B25061 /* Montserrat-Regular.ttf */,
+				0DA0CF17295C915B00B25061 /* Montserrat-SemiBold.ttf */,
+				0DA0CF0F295C912200B25061 /* Montserrat-Black.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0DA0CF1A295C92D900B25061 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0DA0CEFC295B7EAF00B25061 /* MainSection.swift */,
+				0DA0CEFA295B7DCD00B25061 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		0DAA9FEA295A364D0003B501 /* SuportingFiles */ = {
@@ -131,8 +226,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA0CF16295C914C00B25061 /* Montserrat-Regular.ttf in Resources */,
+				0DA0CF14295C913C00B25061 /* Montserrat-ExtraBold.ttf in Resources */,
+				0DA0CF12295C913200B25061 /* Montserrat-Bold.ttf in Resources */,
+				0DA0CF18295C915B00B25061 /* Montserrat-SemiBold.ttf in Resources */,
 				0D299420295A2A9C0067ABC2 /* LaunchScreen.storyboard in Resources */,
 				0D29941D295A2A9C0067ABC2 /* Assets.xcassets in Resources */,
+				0DA0CF10295C912200B25061 /* Montserrat-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,9 +264,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA0CF02295B816900B25061 /* FilterType.swift in Sources */,
+				0DA0CF04295B86F800B25061 /* MainView.swift in Sources */,
 				0D299418295A2A990067ABC2 /* MainViewController.swift in Sources */,
+				0DA0CF08295C8F9D00B25061 /* UIStackView+Extension.swift in Sources */,
 				0D299414295A2A990067ABC2 /* AppDelegate.swift in Sources */,
+				0DA0CEFF295B7FEF00B25061 /* StarWarsCellModel.swift in Sources */,
+				0DA0CF06295B87D900B25061 /* UIView+Extension.swift in Sources */,
 				0D299416295A2A990067ABC2 /* SceneDelegate.swift in Sources */,
+				0DA0CEFD295B7EB000B25061 /* MainSection.swift in Sources */,
+				0DA0CEFB295B7DCD00B25061 /* MainViewModel.swift in Sources */,
+				0DA0CF0E295C904C00B25061 /* UIFont+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
