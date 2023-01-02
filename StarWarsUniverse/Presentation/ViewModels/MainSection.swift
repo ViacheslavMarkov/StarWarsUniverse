@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum MainSection: Int, CaseIterable {
-    case topFilter
-    case bottomItem
-
-    enum Item: Hashable {
-        case topFilter(item: [String])
-        case bottomItem(item: [StarWarsCellModel])
-    }
+enum Sections {
+    case first
 }

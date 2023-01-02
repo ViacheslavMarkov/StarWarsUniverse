@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0240242961B5170082287B /* PlanetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0240232961B5170082287B /* PlanetTableViewCell.swift */; };
+		0D0240282961B6660082287B /* NibCapable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0240272961B6660082287B /* NibCapable+Extension.swift */; };
+		0D02402A2961B69F0082287B /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0240292961B69F0082287B /* PlanetView.swift */; };
+		0D02402C2961B8EE0082287B /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02402B2961B8EE0082287B /* UIImage+Extension.swift */; };
+		0D02402E2961B9110082287B /* ImageNameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02402D2961B9110082287B /* ImageNameType.swift */; };
+		0D0240302961DF270082287B /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02402F2961DF270082287B /* UITableView+Extension.swift */; };
+		0D024032296209D20082287B /* ContainerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D024031296209D20082287B /* ContainerTableView.swift */; };
+		0D024034296219BB0082287B /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D024033296219BB0082287B /* UIScrollView+Extension.swift */; };
+		0D024036296219F80082287B /* DirectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D024035296219F80082287B /* DirectionType.swift */; };
+		0D024038296305B10082287B /* ClimateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D024037296305B10082287B /* ClimateType.swift */; };
+		0D02403A296310760082287B /* StarShipModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D024039296310760082287B /* StarShipModelType.swift */; };
 		0D299414295A2A990067ABC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299413295A2A990067ABC2 /* AppDelegate.swift */; };
 		0D299416295A2A990067ABC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299415295A2A990067ABC2 /* SceneDelegate.swift */; };
 		0D299418295A2A990067ABC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299417295A2A990067ABC2 /* MainViewController.swift */; };
@@ -33,7 +44,7 @@
 		0DA0CF28295CC73500B25061 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF27295CC73500B25061 /* Dictionary+Extension.swift */; };
 		0DA0CF2A295CC76000B25061 /* CharacterSet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF29295CC75F00B25061 /* CharacterSet+Extension.swift */; };
 		0DA0CF2C295CC8F600B25061 /* PeopleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF2B295CC8F600B25061 /* PeopleResponse.swift */; };
-		0DA0CF2F295CCB2B00B25061 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF2E295CCB2B00B25061 /* Gender.swift */; };
+		0DA0CF2F295CCB2B00B25061 /* GenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF2E295CCB2B00B25061 /* GenderType.swift */; };
 		0DA0CF31295CCB5600B25061 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF30295CCB5500B25061 /* People.swift */; };
 		0DA0CF33295CCD1A00B25061 /* PlanetsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF32295CCD1A00B25061 /* PlanetsResponse.swift */; };
 		0DA0CF35295CCD8F00B25061 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CF34295CCD8F00B25061 /* Planet.swift */; };
@@ -42,6 +53,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D0240232961B5170082287B /* PlanetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTableViewCell.swift; sourceTree = "<group>"; };
+		0D0240272961B6660082287B /* NibCapable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NibCapable+Extension.swift"; sourceTree = "<group>"; };
+		0D0240292961B69F0082287B /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
+		0D02402B2961B8EE0082287B /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		0D02402D2961B9110082287B /* ImageNameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameType.swift; sourceTree = "<group>"; };
+		0D02402F2961DF270082287B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		0D024031296209D20082287B /* ContainerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableView.swift; sourceTree = "<group>"; };
+		0D024033296219BB0082287B /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		0D024035296219F80082287B /* DirectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionType.swift; sourceTree = "<group>"; };
+		0D024037296305B10082287B /* ClimateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateType.swift; sourceTree = "<group>"; };
+		0D024039296310760082287B /* StarShipModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarShipModelType.swift; sourceTree = "<group>"; };
 		0D299410295A2A990067ABC2 /* StarWarsUniverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsUniverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D299413295A2A990067ABC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D299415295A2A990067ABC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +92,7 @@
 		0DA0CF27295CC73500B25061 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		0DA0CF29295CC75F00B25061 /* CharacterSet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extension.swift"; sourceTree = "<group>"; };
 		0DA0CF2B295CC8F600B25061 /* PeopleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResponse.swift; sourceTree = "<group>"; };
-		0DA0CF2E295CCB2B00B25061 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		0DA0CF2E295CCB2B00B25061 /* GenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderType.swift; sourceTree = "<group>"; };
 		0DA0CF30295CCB5500B25061 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		0DA0CF32295CCD1A00B25061 /* PlanetsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsResponse.swift; sourceTree = "<group>"; };
 		0DA0CF34295CCD8F00B25061 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
@@ -89,6 +111,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0240252961B51D0082287B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0D0240262961B5290082287B /* TableViewCells */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0D0240262961B5290082287B /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				0D0240232961B5170082287B /* PlanetTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		0D299407295A2A990067ABC2 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +160,7 @@
 				0D299417295A2A990067ABC2 /* MainViewController.swift */,
 				0DA0CF1A295C92D900B25061 /* ViewModels */,
 				0DA0CF0B295C8FDC00B25061 /* Views */,
+				0D0240252961B51D0082287B /* Cells */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -134,6 +173,10 @@
 				0DA0CF07295C8F9D00B25061 /* UIStackView+Extension.swift */,
 				0DA0CF0D295C904C00B25061 /* UIFont+Extension.swift */,
 				0DA0CF27295CC73500B25061 /* Dictionary+Extension.swift */,
+				0D0240272961B6660082287B /* NibCapable+Extension.swift */,
+				0D02402B2961B8EE0082287B /* UIImage+Extension.swift */,
+				0D02402F2961DF270082287B /* UITableView+Extension.swift */,
+				0D024033296219BB0082287B /* UIScrollView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -153,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				0DA0CF03295B86F800B25061 /* MainView.swift */,
+				0D0240292961B69F0082287B /* PlanetView.swift */,
+				0D024031296209D20082287B /* ContainerTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,8 +207,12 @@
 			children = (
 				0DA0CF1E295CC33000B25061 /* ApiError.swift */,
 				0DA0CF01295B816900B25061 /* FilterType.swift */,
-				0DA0CF2E295CCB2B00B25061 /* Gender.swift */,
+				0DA0CF2E295CCB2B00B25061 /* GenderType.swift */,
 				0DA0CF25295CC49400B25061 /* EndPoint.swift */,
+				0D02402D2961B9110082287B /* ImageNameType.swift */,
+				0D024035296219F80082287B /* DirectionType.swift */,
+				0D024037296305B10082287B /* ClimateType.swift */,
+				0D024039296310760082287B /* StarShipModelType.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -331,27 +380,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DA0CF02295B816900B25061 /* FilterType.swift in Sources */,
+				0D024034296219BB0082287B /* UIScrollView+Extension.swift in Sources */,
 				0DA0CF04295B86F800B25061 /* MainView.swift in Sources */,
 				0D299418295A2A990067ABC2 /* MainViewController.swift in Sources */,
 				0DA0CF08295C8F9D00B25061 /* UIStackView+Extension.swift in Sources */,
 				0DA0CF1D295CC28800B25061 /* NetworkRequestManager.swift in Sources */,
 				0D299414295A2A990067ABC2 /* AppDelegate.swift in Sources */,
+				0D02403A296310760082287B /* StarShipModelType.swift in Sources */,
 				0DA0CF35295CCD8F00B25061 /* Planet.swift in Sources */,
+				0D0240242961B5170082287B /* PlanetTableViewCell.swift in Sources */,
 				0DA0CEFF295B7FEF00B25061 /* StarWarsCellModel.swift in Sources */,
 				0DA0CF2C295CC8F600B25061 /* PeopleResponse.swift in Sources */,
 				0DA0CF28295CC73500B25061 /* Dictionary+Extension.swift in Sources */,
 				0DA0CF06295B87D900B25061 /* UIView+Extension.swift in Sources */,
+				0D024038296305B10082287B /* ClimateType.swift in Sources */,
 				0DA0CF37295CE25D00B25061 /* StarShipResponse.swift in Sources */,
 				0DA0CF24295CC46500B25061 /* ApiRequest.swift in Sources */,
 				0DA0CF22295CC41400B25061 /* StarWarsService.swift in Sources */,
 				0DA0CF26295CC49400B25061 /* EndPoint.swift in Sources */,
+				0D0240282961B6660082287B /* NibCapable+Extension.swift in Sources */,
 				0DA0CF31295CCB5600B25061 /* People.swift in Sources */,
+				0D02402E2961B9110082287B /* ImageNameType.swift in Sources */,
+				0D02402A2961B69F0082287B /* PlanetView.swift in Sources */,
 				0DA0CF33295CCD1A00B25061 /* PlanetsResponse.swift in Sources */,
 				0D299416295A2A990067ABC2 /* SceneDelegate.swift in Sources */,
 				0DA0CF39295CE2D600B25061 /* StarShip.swift in Sources */,
+				0D02402C2961B8EE0082287B /* UIImage+Extension.swift in Sources */,
+				0D0240302961DF270082287B /* UITableView+Extension.swift in Sources */,
+				0D024032296209D20082287B /* ContainerTableView.swift in Sources */,
+				0D024036296219F80082287B /* DirectionType.swift in Sources */,
 				0DA0CEFD295B7EB000B25061 /* MainSection.swift in Sources */,
 				0DA0CEFB295B7DCD00B25061 /* MainViewModel.swift in Sources */,
-				0DA0CF2F295CCB2B00B25061 /* Gender.swift in Sources */,
+				0DA0CF2F295CCB2B00B25061 /* GenderType.swift in Sources */,
 				0DA0CF1F295CC33000B25061 /* ApiError.swift in Sources */,
 				0DA0CF2A295CC76000B25061 /* CharacterSet+Extension.swift in Sources */,
 				0DA0CF0E295C904C00B25061 /* UIFont+Extension.swift in Sources */,
