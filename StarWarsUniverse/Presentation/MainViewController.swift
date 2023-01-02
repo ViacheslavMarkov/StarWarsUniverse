@@ -7,8 +7,14 @@
 
 import UIKit
 
+typealias Snapshot = NSDiffableDataSourceSnapshot<Sections, StarWarsCellModel>
+typealias DataSource = UITableViewDiffableDataSource<Sections, StarWarsCellModel>
+
 class MainViewController: UIViewController {
     var viewModel: MainViewModelProtocol!
+    
+//    private var dataSource: DataSource?
+//    private var snapshot = Snapshot()
     
     private let mainView: MainView = {
         let mainView = MainView()
@@ -18,13 +24,13 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewModel()
         setupMainView()
-        registerCell()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getPeople()
+        viewModel.downloadNewData(filterType: .people)
     }
 }
 
@@ -36,42 +42,31 @@ private extension MainViewController {
     }
     
     func setupMainView() {
-//        mainView.collectionView.dataSource = viewModel.makeDataSource() as? any UICollectionViewDataSource
-//        mainView.collectionView.delegate = self
         mainView.configure(filterItem: viewModel.getFilterItems())
+        mainView.delegate = self
         view.add([mainView])
         mainView.autoPinEdgesToSuperView()
     }
+}
+
+//MARK: - MainViewDelegate
+extension MainViewController: MainViewDelegate {
+    func didNeedDownloadNewData(_ sender: MainView, tag: Int) {
+        if let filterType = FilterType(rawValue: tag) {
+            viewModel.downloadNewData(filterType: filterType)
+        }
+    }
     
-    func registerCell() {
-//        mainView.collectionView.register(<#T##nib: UINib?##UINib?#>, forCellWithReuseIdentifier: <#T##String#>)
-//        mainView.collectionView.register(<#T##nib: UINib?##UINib?#>, forCellWithReuseIdentifier: <#T##String#>)
+    func filterTapped(_ sender: MainView, selectedIndex: Int) {
+        viewModel.changeFilterType(at: selectedIndex)
+        mainView.scrollView.scrollTo(page: selectedIndex)
     }
 }
 
 //MARK: - MainViewModelDelegate
-//extension MainViewController: UICollectionViewDelegate {
-//
-//}
-
-//MARK: - MainViewModelDelegate
-//extension MainViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 0
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = UICollectionViewCell()
-//        return cell
-//    }
-//
-//
-//}
-
-//MARK: - MainViewModelDelegate
 extension MainViewController: MainViewModelDelegate {
-    func didGetPeople() {
-        print("didGetPeople")
+    func updateDataSource(_ sender: MainViewModel, selectedFilterType: FilterType, models: [StarWarsCellModel]) {
+        mainView.updateDataSource(selectedFilterType: selectedFilterType, models: models)
     }
     
     func updateFailed(message: String) {

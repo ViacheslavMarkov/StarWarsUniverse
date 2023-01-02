@@ -8,11 +8,14 @@
 import Foundation
 
 struct StarWarsCellModel: Hashable {
-    let userImageString      : String?
+    let name: String?
+    let imageNameType: ImageNameType?
     
     init(
-        userImageString     : String? = ""
+        name: String?,
+        imageNameType: ImageNameType?
     ) {
-        self.userImageString    = userImageString
+        self.name = name
+        self.imageNameType = imageNameType
     }
 }
