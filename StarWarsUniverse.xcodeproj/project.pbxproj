@@ -23,6 +23,9 @@
 		0D299418295A2A990067ABC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299417295A2A990067ABC2 /* MainViewController.swift */; };
 		0D29941D295A2A9C0067ABC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941C295A2A9C0067ABC2 /* Assets.xcassets */; };
 		0D299420295A2A9C0067ABC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941E295A2A9C0067ABC2 /* LaunchScreen.storyboard */; };
+		0D72205F29674E2700FB7402 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72205E29674E2700FB7402 /* UIViewController+Extension.swift */; };
+		0D72206129674EA600FB7402 /* PresenterTableViewAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */; };
+		0D7220652967639400FB7402 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7220642967639400FB7402 /* LabelTableViewCell.swift */; };
 		0DA0CEFB295B7DCD00B25061 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFA295B7DCD00B25061 /* MainViewModel.swift */; };
 		0DA0CEFD295B7EB000B25061 /* MainSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFC295B7EAF00B25061 /* MainSection.swift */; };
 		0DA0CEFF295B7FEF00B25061 /* StarWarsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFE295B7FEF00B25061 /* StarWarsCellModel.swift */; };
@@ -71,6 +74,9 @@
 		0D29941C295A2A9C0067ABC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D29941F295A2A9C0067ABC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D299421295A2A9C0067ABC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D72205E29674E2700FB7402 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTableViewAlertView.swift; sourceTree = "<group>"; };
+		0D7220642967639400FB7402 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		0DA0CEFA295B7DCD00B25061 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0DA0CEFC295B7EAF00B25061 /* MainSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSection.swift; sourceTree = "<group>"; };
 		0DA0CEFE295B7FEF00B25061 /* StarWarsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCellModel.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				0D0240232961B5170082287B /* PlanetTableViewCell.swift */,
+				0D7220642967639400FB7402 /* LabelTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -177,6 +184,7 @@
 				0D02402B2961B8EE0082287B /* UIImage+Extension.swift */,
 				0D02402F2961DF270082287B /* UITableView+Extension.swift */,
 				0D024033296219BB0082287B /* UIScrollView+Extension.swift */,
+				0D72205E29674E2700FB7402 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,6 +206,7 @@
 				0DA0CF03295B86F800B25061 /* MainView.swift */,
 				0D0240292961B69F0082287B /* PlanetView.swift */,
 				0D024031296209D20082287B /* ContainerTableView.swift */,
+				0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,6 +410,8 @@
 				0D0240282961B6660082287B /* NibCapable+Extension.swift in Sources */,
 				0DA0CF31295CCB5600B25061 /* People.swift in Sources */,
 				0D02402E2961B9110082287B /* ImageNameType.swift in Sources */,
+				0D72205F29674E2700FB7402 /* UIViewController+Extension.swift in Sources */,
+				0D7220652967639400FB7402 /* LabelTableViewCell.swift in Sources */,
 				0D02402A2961B69F0082287B /* PlanetView.swift in Sources */,
 				0DA0CF33295CCD1A00B25061 /* PlanetsResponse.swift in Sources */,
 				0D299416295A2A990067ABC2 /* SceneDelegate.swift in Sources */,
@@ -408,6 +419,7 @@
 				0D02402C2961B8EE0082287B /* UIImage+Extension.swift in Sources */,
 				0D0240302961DF270082287B /* UITableView+Extension.swift in Sources */,
 				0D024032296209D20082287B /* ContainerTableView.swift in Sources */,
+				0D72206129674EA600FB7402 /* PresenterTableViewAlertView.swift in Sources */,
 				0D024036296219F80082287B /* DirectionType.swift in Sources */,
 				0DA0CEFD295B7EB000B25061 /* MainSection.swift in Sources */,
 				0DA0CEFB295B7DCD00B25061 /* MainViewModel.swift in Sources */,

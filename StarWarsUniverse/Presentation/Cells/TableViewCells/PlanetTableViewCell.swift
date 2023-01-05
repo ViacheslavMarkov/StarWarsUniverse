@@ -12,8 +12,6 @@ final class PlanetTableViewCell: UITableViewCell, NibCapable {
         let planetView = PlanetView()
         return planetView
     }()
-    
-    public static let reuseID = "PlanetTableViewCell"
 
     override init(
         style: UITableViewCell.CellStyle,

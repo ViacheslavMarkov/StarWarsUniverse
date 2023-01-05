@@ -8,11 +8,11 @@
 import Foundation
 
 enum GenderType: String, Codable {
-    case female = "female"
-    case male = "male"
-    case nA = "n/a"
-    case hermaphrodite = "hermaphrodite"
-    case none = "none"
+    case female         = "female"
+    case male           = "male"
+    case nA             = "n/a"
+    case hermaphrodite  = "hermaphrodite"
+    case none           = "none"
     
     var imageType: ImageNameType {
         switch self {
@@ -26,6 +26,21 @@ enum GenderType: String, Codable {
             return .hermaphroditeGender
         case .none:
             return .noneGender
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .female:
+            return "Female"
+        case .male:
+            return "Male"
+        case .nA:
+            return "N/A"
+        case .hermaphrodite:
+            return "Hermaphrodite"
+        case .none:
+            return "None"
         }
     }
 }

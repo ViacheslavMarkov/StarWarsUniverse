@@ -13,9 +13,6 @@ typealias DataSource = UITableViewDiffableDataSource<Sections, StarWarsCellModel
 class MainViewController: UIViewController {
     var viewModel: MainViewModelProtocol!
     
-//    private var dataSource: DataSource?
-//    private var snapshot = Snapshot()
-    
     private let mainView: MainView = {
         let mainView = MainView()
         mainView.backgroundColor = .white
@@ -51,6 +48,11 @@ private extension MainViewController {
 
 //MARK: - MainViewDelegate
 extension MainViewController: MainViewDelegate {
+    func didTapItem(_ sender: MainView, selectedItemName: String, index: Int) {
+        let dictionary = viewModel.getItemData(at: index, by: selectedItemName)
+        presentTableViewAlert(title: selectedItemName, dictionary: dictionary)
+    }
+    
     func didNeedDownloadNewData(_ sender: MainView, tag: Int) {
         if let filterType = FilterType(rawValue: tag) {
             viewModel.downloadNewData(filterType: filterType)
@@ -70,6 +72,6 @@ extension MainViewController: MainViewModelDelegate {
     }
     
     func updateFailed(message: String) {
-        print("updateFailed")
+        presentBasicAlert(message: "Data was not downloaded successfully!")
     }
 }

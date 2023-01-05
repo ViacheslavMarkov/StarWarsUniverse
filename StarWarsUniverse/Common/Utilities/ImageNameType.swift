@@ -38,6 +38,7 @@ case frigateShip
 case interseptorShip
 case starfighteShip
 case transporterShip
-    
+ 
+    case circleCloseButton
 case emptyImage = ""
 }

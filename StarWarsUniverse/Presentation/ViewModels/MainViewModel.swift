@@ -16,6 +16,7 @@ protocol MainViewModelProtocol {
     func getFilterItems() -> [String]
     func changeFilterType(at index: Int)
     func downloadNewData(filterType: FilterType)
+    func getItemData(at index: Int, by name: String) -> [String: String]
     
     var delegate: MainViewModelDelegate? { get set }
 }
@@ -36,10 +37,6 @@ final class MainViewModel: MainViewModelProtocol {
 
 // MARK: - MainViewModel
 extension MainViewModel {
-    func updateDynamicDataSource() {
-        
-    }
-    
     func getFilterItems() -> [String] {
         var list: [String] = []
         for item in FilterType.allCases {
@@ -200,5 +197,75 @@ extension MainViewModel {
             selectedFilterType = type
             downloadNewData(filterType: selectedFilterType)
         }
+    }
+    
+    func getItemData(at index: Int, by name: String) -> [String: String] {
+        let filterItems = getFilterItems()
+        if let firstIndex = filterItems.firstIndex(where: { $0 == name }) {
+            let filterItem = FilterType.init(rawValue: firstIndex)
+            switch filterItem {
+            case .people:
+                let item = cachePeople[index]
+                return [
+                    "Name": item.name,
+                    "Skin color": item.skinColor,
+                    "Height": item.height,
+                    "Birth year": item.birthYear,
+                    "Home world": item.homeWorld,
+                    "Mass": item.mass,
+                    "Hair color": item.hairColor,
+                    "Gender": item.gender.title,
+                    "Number of films": getLastNumber(array: item.films),
+                    "Number of species": getLastNumber(array: item.species),
+                    "Number of starships": getLastNumber(array: item.starships)
+                ]
+            case .planet:
+                let item = cachePlanets[index]
+                return [
+                    "Name": item.name,
+                    "Population": item.population,
+                    "Diameter": item.diameter,
+                    "Gravity": item.gravity,
+                    "Orbital period": item.orbitalPeriod,
+                    "Climate": item.climate.rawValue,
+                    "Rotation period": item.rotationPeriod,
+                    "Number of films": getLastNumber(array: item.films),
+                    "Residents": getLastNumber(array: item.residents),
+                    "Terrain": item.terrain ?? "",
+                    "Surface water": item.surfaceWater ?? ""
+                ]
+            case .starship:
+                let item = cacheStarShips[index]
+                return [
+                    "Name": item.name,
+                    "Model": item.model.rawValue,
+                    "Cost in credits": item.costInCredits,
+                    "Manufacturer": item.manufacturer,
+                    "Length": item.length,
+                    "Max atmosphering speed": item.maxAtmospheringSpeed,
+                    "Crew": item.crew,
+                    "Passengers": item.passengers,
+                    "Cargo capacity": item.cargoCapacity,
+                    "Starship class": item.starshipClass,
+                    "Hyperdrive rating": item.hyperdriveRating,
+                    "Number of films": getLastNumber(array: item.films),
+                    "Pilots": getLastNumber(array: item.pilots),
+                ]
+            default: return [:]
+            }
+        }
+        return [:]
+    }
+    
+    func getLastNumber(array: [String]) -> String {
+        var newList = ""
+        for item in array {
+            let list = item.components(separatedBy: "/").compactMap({ Int($0) })
+            if let number = list.last {
+                let separator = newList.isEmpty ? "" : ", "
+                newList += "\(separator)\(number)"
+            }
+        }
+        return newList
     }
 }

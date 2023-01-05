@@ -9,6 +9,7 @@ import UIKit
 
 protocol ContainerTableViewDelegate: AnyObject {
     func didNeedDownloadNewData(_ sender: ContainerTableView, tag: Int)
+    func didTapItem(_ sender: ContainerTableView, index: Int)
 }
 
 final class ContainerTableView: UIView {
@@ -89,5 +90,9 @@ extension ContainerTableView: UITableViewDelegate {
             tag = self.tag
             delegate?.didNeedDownloadNewData(self, tag: tag)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didTapItem(self, index: indexPath.row)
     }
 }

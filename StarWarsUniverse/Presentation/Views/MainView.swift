@@ -10,6 +10,7 @@ import UIKit
 protocol MainViewDelegate: AnyObject {
     func filterTapped(_ sender: MainView, selectedIndex: Int)
     func didNeedDownloadNewData(_ sender: MainView, tag: Int)
+    func didTapItem(_ sender: MainView, selectedItemName: String, index: Int)
 }
 
 final class MainView: UIView {
@@ -35,13 +36,10 @@ final class MainView: UIView {
     
     private lazy var selectedLineViewLeading = selectedLineView.leading.constraint(equalTo: self.leading)
     
-    //    let tableView: UITableView = {
-    //        let tableView = UITableView()
-    //        return tableView
-    //    }()
-    
     private let filterViewHeight: CGFloat = 40
     private let space: CGFloat = 16
+    
+    private var selectedItemName: String?
     
     weak var delegate: MainViewDelegate?
     
@@ -70,7 +68,6 @@ final class MainView: UIView {
             hStack,
             fullLineView,
             selectedLineView,
-            //            tableView
             scrollView
         ])
         
@@ -79,7 +76,6 @@ final class MainView: UIView {
             hStack.leading.constraint(equalTo: leading),
             hStack.trailing.constraint(equalTo: trailing),
             hStack.height.constraint(equalToConstant: filterViewHeight),
-            //            hStack.bottom.constraint(equalTo: tableView.top, constant: -space),
             hStack.bottom.constraint(equalTo: scrollView.top, constant: -space),
             
             fullLineView.leading.constraint(equalTo: leading),
@@ -91,10 +87,6 @@ final class MainView: UIView {
             selectedLineView.top.constraint(equalTo: hStack.bottom, constant: -1),
             selectedLineView.height.constraint(equalToConstant: 3),
             
-            //            tableView.leading.constraint(equalTo: leading),
-            //            tableView.trailing.constraint(equalTo: trailing),
-            //            tableView.bottom.constraint(equalTo: bottom)
-            
             scrollView.leading.constraint(equalTo: leading),
             scrollView.trailing.constraint(equalTo: trailing),
             scrollView.bottom.constraint(equalTo: bottom)
@@ -102,6 +94,8 @@ final class MainView: UIView {
     }
     
     func configure(filterItem: [String]) {
+        selectedItemName = filterItem.first
+        
         if hStack.arrangedSubviews.isEmpty {
             addLabels(item: filterItem)
         } else {
@@ -154,6 +148,8 @@ final class MainView: UIView {
         
         let widthOfSubline = frame.width / CGFloat(hStack.subviews.count)
         selectedLineViewLeading.constant = widthOfSubline * CGFloat(view.tag)
+        
+        selectedItemName = view.text
         
         hStack.arrangedSubviews.forEach {
             if let attributedLabel = $0 as? UILabel {
@@ -220,6 +216,12 @@ final class MainView: UIView {
 
 //MARK: - ContainerTableViewDelegate
 extension MainView: ContainerTableViewDelegate {
+    func didTapItem(_ sender: ContainerTableView, index: Int) {
+        if let selectedItemName = selectedItemName {
+            delegate?.didTapItem(self, selectedItemName: selectedItemName, index: index)
+        }
+    }
+    
     func didNeedDownloadNewData(_ sender: ContainerTableView, tag: Int) {
         delegate?.didNeedDownloadNewData(self, tag: tag)
     }
