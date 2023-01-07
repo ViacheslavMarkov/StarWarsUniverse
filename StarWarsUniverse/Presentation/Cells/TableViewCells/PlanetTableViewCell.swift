@@ -23,8 +23,10 @@ final class PlanetTableViewCell: UITableViewCell, NibCapable {
     
     required init?(coder: NSCoder) {fatalError("init(coder:) has not been implemented")}
     
-    public override func prepareForReuse() {
+    override func prepareForReuse() {
         super.prepareForReuse()
+        planetView.image.image = nil
+        planetView.label.text = nil
     }
     
     override func draw(_ rect: CGRect) {

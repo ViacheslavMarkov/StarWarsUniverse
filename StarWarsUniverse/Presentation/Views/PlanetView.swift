@@ -12,13 +12,13 @@ import UIKit
 //}
 
 final class PlanetView: UIView {
-    private let image: UIImageView = {
+    let image: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .clear
         return image
     }()
     
-    private let label: UILabel = {
+    let label: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
         label.font = .customFont(type: .bold, size: 18)
@@ -26,7 +26,7 @@ final class PlanetView: UIView {
         return label
     }()
 
-    public init() {
+    init() {
         super.init(frame: .zero)
         setup()
     }
