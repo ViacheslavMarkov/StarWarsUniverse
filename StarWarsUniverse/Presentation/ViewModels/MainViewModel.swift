@@ -215,7 +215,20 @@ extension MainViewModel {
         if selectedFilterType.rawValue == index { return }
         if let type = FilterType.init(rawValue: index) {
             selectedFilterType = type
-            downloadNewData(filterType: selectedFilterType)
+            switch type {
+            case .people:
+                if cachePeople.isEmpty {
+                    downloadNewData(filterType: selectedFilterType)
+                }
+            case .planet:
+                if cachePlanets.isEmpty {
+                    downloadNewData(filterType: selectedFilterType)
+                }
+            case .starship:
+                if cacheStarShips.isEmpty {
+                    downloadNewData(filterType: selectedFilterType)
+                }
+            }
         }
     }
     
