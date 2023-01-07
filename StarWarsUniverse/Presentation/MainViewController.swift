@@ -67,6 +67,10 @@ extension MainViewController: MainViewDelegate {
 
 //MARK: - MainViewModelDelegate
 extension MainViewController: MainViewModelDelegate {
+    func showASndHideDownloadIndicator(_ sender: MainViewModel, isShow: Bool) {
+        isShow ? showActivityIndicator() : hideActivityIndicator()
+    }
+    
     func updateDataSource(_ sender: MainViewModel, selectedFilterType: FilterType, models: [StarWarsCellModel]) {
         mainView.updateDataSource(selectedFilterType: selectedFilterType, models: models)
     }

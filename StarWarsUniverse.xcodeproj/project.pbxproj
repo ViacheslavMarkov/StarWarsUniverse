@@ -26,6 +26,7 @@
 		0D72205F29674E2700FB7402 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72205E29674E2700FB7402 /* UIViewController+Extension.swift */; };
 		0D72206129674EA600FB7402 /* PresenterTableViewAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */; };
 		0D7220652967639400FB7402 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7220642967639400FB7402 /* LabelTableViewCell.swift */; };
+		0D72206B2968496A00FB7402 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72206A2968496A00FB7402 /* ActivityView.swift */; };
 		0DA0CEFB295B7DCD00B25061 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFA295B7DCD00B25061 /* MainViewModel.swift */; };
 		0DA0CEFD295B7EB000B25061 /* MainSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFC295B7EAF00B25061 /* MainSection.swift */; };
 		0DA0CEFF295B7FEF00B25061 /* StarWarsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFE295B7FEF00B25061 /* StarWarsCellModel.swift */; };
@@ -77,6 +78,7 @@
 		0D72205E29674E2700FB7402 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTableViewAlertView.swift; sourceTree = "<group>"; };
 		0D7220642967639400FB7402 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
+		0D72206A2968496A00FB7402 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		0DA0CEFA295B7DCD00B25061 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0DA0CEFC295B7EAF00B25061 /* MainSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSection.swift; sourceTree = "<group>"; };
 		0DA0CEFE295B7FEF00B25061 /* StarWarsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCellModel.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				0D0240292961B69F0082287B /* PlanetView.swift */,
 				0D024031296209D20082287B /* ContainerTableView.swift */,
 				0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */,
+				0D72206A2968496A00FB7402 /* ActivityView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				0DA0CEFF295B7FEF00B25061 /* StarWarsCellModel.swift in Sources */,
 				0DA0CF2C295CC8F600B25061 /* PeopleResponse.swift in Sources */,
 				0DA0CF28295CC73500B25061 /* Dictionary+Extension.swift in Sources */,
+				0D72206B2968496A00FB7402 /* ActivityView.swift in Sources */,
 				0DA0CF06295B87D900B25061 /* UIView+Extension.swift in Sources */,
 				0D024038296305B10082287B /* ClimateType.swift in Sources */,
 				0DA0CF37295CE25D00B25061 /* StarShipResponse.swift in Sources */,
@@ -572,6 +576,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -600,6 +605,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

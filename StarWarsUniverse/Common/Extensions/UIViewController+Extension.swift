@@ -48,3 +48,32 @@ extension UIViewController {
         present(viewController, animated: true)
     }
 }
+
+
+extension UIViewController {
+    func showActivityIndicator() {
+        let animationView = createActivityIndicatorView()
+        animationView.startAnimating()
+    }
+    
+    func hideActivityIndicator() {
+        let animationView = self.view.subviews.compactMap { $0 as? ActivityView }.first
+        animationView?.stopAnimating()
+        animationView?.removeFromSuperview()
+    }
+    
+    private func createActivityIndicatorView() -> ActivityView {
+        guard let activityView = self.view.subviews.compactMap({ $0 as? ActivityView }).first else {
+            
+            let activityView = ActivityView()
+            activityView.backgroundColor = .white.withAlphaComponent(0.9)
+            activityView.frame = self.view.bounds
+            
+            self.view.addSubview(activityView)
+            activityView.autoPinEdgesToSuperView()
+            
+            return activityView
+        }
+        return activityView
+    }
+}

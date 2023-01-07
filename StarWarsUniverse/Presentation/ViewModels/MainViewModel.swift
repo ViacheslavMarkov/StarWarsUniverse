@@ -10,6 +10,7 @@ import Foundation
 protocol MainViewModelDelegate: AnyObject {
     func updateFailed(message: String)
     func updateDataSource(_ sender: MainViewModel, selectedFilterType: FilterType, models: [StarWarsCellModel])
+    func showASndHideDownloadIndicator(_ sender: MainViewModel, isShow: Bool)
 }
 
 protocol MainViewModelProtocol {
@@ -46,7 +47,12 @@ extension MainViewModel {
     }
     
     func getPeople(page: Int? = 1) {
-        guard let page = page else { return }
+        guard
+            let page = page
+        else {
+            delegate?.showASndHideDownloadIndicator(self, isShow: false)
+            return
+        }
         StarWarsService.shared.getPeople(at: page, completion: { [weak self] (result) in
             guard
                 let self = self
@@ -63,11 +69,17 @@ extension MainViewModel {
                 let next = response.next?.components(separatedBy: "=").last
                 self.peopleNextPage = Int(next ?? "")
             }
+            self.delegate?.showASndHideDownloadIndicator(self, isShow: false)
         })
     }
     
     func getPlanets(page: Int? = 1) {
-        guard let page = page else { return }
+        guard
+            let page = page
+        else {
+            delegate?.showASndHideDownloadIndicator(self, isShow: false)
+            return
+        }
         StarWarsService.shared.getPlanets(at: page, completion: { [weak self] (result) in
             guard
                 let self = self
@@ -84,11 +96,17 @@ extension MainViewModel {
                 let next = response.next?.components(separatedBy: "=").last
                 self.planetsNextPage = Int(next ?? "")
             }
+            self.delegate?.showASndHideDownloadIndicator(self, isShow: false)
         })
     }
     
     func getStarShips(page: Int? = 1) {
-        guard let page = page else { return }
+        guard
+            let page = page
+        else {
+            delegate?.showASndHideDownloadIndicator(self, isShow: false)
+            return
+        }
         StarWarsService.shared.getStartShips(at: page, completion: { [weak self] (result) in
             guard
                 let self = self
@@ -105,10 +123,12 @@ extension MainViewModel {
                 let next = response.next?.components(separatedBy: "=").last
                 self.starShipsNextPage = Int(next ?? "")
             }
+            self.delegate?.showASndHideDownloadIndicator(self, isShow: false)
         })
     }
     
     func downloadNewData(filterType: FilterType) {
+        delegate?.showASndHideDownloadIndicator(self, isShow: true)
         switch filterType {
         case .planet:
             let nextPage = planetsNextPage
@@ -249,7 +269,7 @@ extension MainViewModel {
                     "Starship class": item.starshipClass,
                     "Hyperdrive rating": item.hyperdriveRating,
                     "Number of films": getLastNumber(array: item.films),
-                    "Pilots": getLastNumber(array: item.pilots),
+                    "Pilots": getLastNumber(array: item.pilots)
                 ]
             default: return [:]
             }
