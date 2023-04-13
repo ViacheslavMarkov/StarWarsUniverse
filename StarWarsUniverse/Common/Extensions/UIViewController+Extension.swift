@@ -8,6 +8,10 @@
 import UIKit
 
 extension UIViewController {
+    var appDelegate: AppDelegate? {
+        UIApplication.shared.delegate as? AppDelegate
+    }
+    
     func presentBasicAlert(
         title: String = "Error",
         message: String = "Something went wrong.",

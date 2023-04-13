@@ -10,7 +10,7 @@ import UIKit
 typealias Snapshot = NSDiffableDataSourceSnapshot<Sections, StarWarsCellModel>
 typealias DataSource = UITableViewDiffableDataSource<Sections, StarWarsCellModel>
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, TabBarConforming {
     var viewModel: MainViewModelProtocol!
     
     private let mainView: MainView = {

@@ -9,36 +9,37 @@ import Foundation
 
 enum ImageNameType: String {
     //MARK: - Planets
-case bluePlanet
-case greenPlanet
+    case bluePlanet
+    case greenPlanet
     
     //MARK: - Planets
-case femaleGender
-case maleGender
-case hermaphroditeGender
-case naGender
-case noneGender
+    case femaleGender
+    case maleGender
+    case hermaphroditeGender
+    case naGender
+    case noneGender
     
     //MARK: - Climates
-case aridClimate
-case frigidClimate
-case frozenClimate
-case pollutedClimate
-case superheaterClimate
-case temperateClimate
-case tropicalClimate
-case unknownClimate
+    case aridClimate
+    case frigidClimate
+    case frozenClimate
+    case pollutedClimate
+    case superheaterClimate
+    case temperateClimate
+    case tropicalClimate
+    case unknownClimate
     
     //MARK: - StarShips
-case battleStantionShip
-case corvetteShip
-case cruiserShip
-case destroyerShip
-case frigateShip
-case interseptorShip
-case starfighteShip
-case transporterShip
+    case battleStantionShip
+    case corvetteShip
+    case cruiserShip
+    case destroyerShip
+    case frigateShip
+    case interseptorShip
+    case starfighteShip
+    case transporterShip
  
     case circleCloseButton
-case emptyImage = ""
+    case emptyImage = ""
+    case starWarsImage
 }

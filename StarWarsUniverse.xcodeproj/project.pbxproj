@@ -19,7 +19,6 @@
 		0D024038296305B10082287B /* ClimateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D024037296305B10082287B /* ClimateType.swift */; };
 		0D02403A296310760082287B /* StarShipModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D024039296310760082287B /* StarShipModelType.swift */; };
 		0D299414295A2A990067ABC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299413295A2A990067ABC2 /* AppDelegate.swift */; };
-		0D299416295A2A990067ABC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299415295A2A990067ABC2 /* SceneDelegate.swift */; };
 		0D299418295A2A990067ABC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299417295A2A990067ABC2 /* MainViewController.swift */; };
 		0D29941D295A2A9C0067ABC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941C295A2A9C0067ABC2 /* Assets.xcassets */; };
 		0D299420295A2A9C0067ABC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941E295A2A9C0067ABC2 /* LaunchScreen.storyboard */; };
@@ -27,6 +26,12 @@
 		0D72206129674EA600FB7402 /* PresenterTableViewAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */; };
 		0D7220652967639400FB7402 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7220642967639400FB7402 /* LabelTableViewCell.swift */; };
 		0D72206B2968496A00FB7402 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72206A2968496A00FB7402 /* ActivityView.swift */; };
+		0D9B71CA29E7F4480051262E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B71C929E7F4480051262E /* OnboardingViewController.swift */; };
+		0D9B71CF29E7F4CA0051262E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B71CE29E7F4CA0051262E /* MainTabBarController.swift */; };
+		0D9B71D229E7F5740051262E /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B71D129E7F5740051262E /* UserDefaultsWrapper.swift */; };
+		0D9B71D429E7F5990051262E /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B71D329E7F5990051262E /* UserDefaultsKeys.swift */; };
+		0D9B71D929E7FB680051262E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B71D829E7FB680051262E /* OnboardingView.swift */; };
+		0D9B71DC29E804180051262E /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B71DB29E804180051262E /* UIButton+Extension.swift */; };
 		0DA0CEFB295B7DCD00B25061 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFA295B7DCD00B25061 /* MainViewModel.swift */; };
 		0DA0CEFD295B7EB000B25061 /* MainSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFC295B7EAF00B25061 /* MainSection.swift */; };
 		0DA0CEFF295B7FEF00B25061 /* StarWarsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CEFE295B7FEF00B25061 /* StarWarsCellModel.swift */; };
@@ -70,7 +75,6 @@
 		0D024039296310760082287B /* StarShipModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarShipModelType.swift; sourceTree = "<group>"; };
 		0D299410295A2A990067ABC2 /* StarWarsUniverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsUniverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D299413295A2A990067ABC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D299415295A2A990067ABC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0D299417295A2A990067ABC2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0D29941C295A2A9C0067ABC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D29941F295A2A9C0067ABC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,6 +83,12 @@
 		0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTableViewAlertView.swift; sourceTree = "<group>"; };
 		0D7220642967639400FB7402 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		0D72206A2968496A00FB7402 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		0D9B71C929E7F4480051262E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		0D9B71CE29E7F4CA0051262E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		0D9B71D129E7F5740051262E /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		0D9B71D329E7F5990051262E /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		0D9B71D829E7FB680051262E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		0D9B71DB29E804180051262E /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		0DA0CEFA295B7DCD00B25061 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0DA0CEFC295B7EAF00B25061 /* MainSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSection.swift; sourceTree = "<group>"; };
 		0DA0CEFE295B7FEF00B25061 /* StarWarsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCellModel.swift; sourceTree = "<group>"; };
@@ -163,13 +173,55 @@
 			path = StarWarsUniverse;
 			sourceTree = "<group>";
 		};
-		0DA0CF00295B809500B25061 /* Presentation */ = {
+		0D9B71CB29E7F4690051262E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0D9B71C929E7F4480051262E /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		0D9B71CC29E7F47D0051262E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0D9B71CD29E7F49D0051262E /* Main */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0D9B71CD29E7F49D0051262E /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				0D299417295A2A990067ABC2 /* MainViewController.swift */,
-				0DA0CF1A295C92D900B25061 /* ViewModels */,
+				0DA0CF1A295C92D900B25061 /* ViewModel */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0D9B71D029E7F4D00051262E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0D9B71CE29E7F4CA0051262E /* MainTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0D9B71DA29E7FF1D0051262E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0D9B71D829E7FB680051262E /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		0DA0CF00295B809500B25061 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0D9B71CC29E7F47D0051262E /* Main */,
+				0D9B71CB29E7F4690051262E /* Onboarding */,
 				0DA0CF0B295C8FDC00B25061 /* Views */,
 				0D0240252961B51D0082287B /* Cells */,
+				0D9B71D029E7F4D00051262E /* TabBar */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -187,6 +239,7 @@
 				0D02402F2961DF270082287B /* UITableView+Extension.swift */,
 				0D024033296219BB0082287B /* UIScrollView+Extension.swift */,
 				0D72205E29674E2700FB7402 /* UIViewController+Extension.swift */,
+				0D9B71DB29E804180051262E /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,6 +263,7 @@
 				0D024031296209D20082287B /* ContainerTableView.swift */,
 				0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */,
 				0D72206A2968496A00FB7402 /* ActivityView.swift */,
+				0D9B71DA29E7FF1D0051262E /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +279,8 @@
 				0D024035296219F80082287B /* DirectionType.swift */,
 				0D024037296305B10082287B /* ClimateType.swift */,
 				0D024039296310760082287B /* StarShipModelType.swift */,
+				0D9B71D129E7F5740051262E /* UserDefaultsWrapper.swift */,
+				0D9B71D329E7F5990051262E /* UserDefaultsKeys.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -241,13 +297,13 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		0DA0CF1A295C92D900B25061 /* ViewModels */ = {
+		0DA0CF1A295C92D900B25061 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				0DA0CEFC295B7EAF00B25061 /* MainSection.swift */,
 				0DA0CEFA295B7DCD00B25061 /* MainViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0DA0CF1B295CC1F200B25061 /* Common */ = {
@@ -287,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				0D299413295A2A990067ABC2 /* AppDelegate.swift */,
-				0D299415295A2A990067ABC2 /* SceneDelegate.swift */,
 				0D29941C295A2A9C0067ABC2 /* Assets.xcassets */,
 				0D29941E295A2A9C0067ABC2 /* LaunchScreen.storyboard */,
 			);
@@ -394,6 +449,7 @@
 				0DA0CF02295B816900B25061 /* FilterType.swift in Sources */,
 				0D024034296219BB0082287B /* UIScrollView+Extension.swift in Sources */,
 				0DA0CF04295B86F800B25061 /* MainView.swift in Sources */,
+				0D9B71D929E7FB680051262E /* OnboardingView.swift in Sources */,
 				0D299418295A2A990067ABC2 /* MainViewController.swift in Sources */,
 				0DA0CF08295C8F9D00B25061 /* UIStackView+Extension.swift in Sources */,
 				0DA0CF1D295CC28800B25061 /* NetworkRequestManager.swift in Sources */,
@@ -407,8 +463,10 @@
 				0D72206B2968496A00FB7402 /* ActivityView.swift in Sources */,
 				0DA0CF06295B87D900B25061 /* UIView+Extension.swift in Sources */,
 				0D024038296305B10082287B /* ClimateType.swift in Sources */,
+				0D9B71D429E7F5990051262E /* UserDefaultsKeys.swift in Sources */,
 				0DA0CF37295CE25D00B25061 /* StarShipResponse.swift in Sources */,
 				0DA0CF24295CC46500B25061 /* ApiRequest.swift in Sources */,
+				0D9B71DC29E804180051262E /* UIButton+Extension.swift in Sources */,
 				0DA0CF22295CC41400B25061 /* StarWarsService.swift in Sources */,
 				0DA0CF26295CC49400B25061 /* EndPoint.swift in Sources */,
 				0D0240282961B6660082287B /* NibCapable+Extension.swift in Sources */,
@@ -418,16 +476,18 @@
 				0D7220652967639400FB7402 /* LabelTableViewCell.swift in Sources */,
 				0D02402A2961B69F0082287B /* PlanetView.swift in Sources */,
 				0DA0CF33295CCD1A00B25061 /* PlanetsResponse.swift in Sources */,
-				0D299416295A2A990067ABC2 /* SceneDelegate.swift in Sources */,
 				0DA0CF39295CE2D600B25061 /* StarShip.swift in Sources */,
 				0D02402C2961B8EE0082287B /* UIImage+Extension.swift in Sources */,
 				0D0240302961DF270082287B /* UITableView+Extension.swift in Sources */,
 				0D024032296209D20082287B /* ContainerTableView.swift in Sources */,
+				0D9B71D229E7F5740051262E /* UserDefaultsWrapper.swift in Sources */,
 				0D72206129674EA600FB7402 /* PresenterTableViewAlertView.swift in Sources */,
+				0D9B71CA29E7F4480051262E /* OnboardingViewController.swift in Sources */,
 				0D024036296219F80082287B /* DirectionType.swift in Sources */,
 				0DA0CEFD295B7EB000B25061 /* MainSection.swift in Sources */,
 				0DA0CEFB295B7DCD00B25061 /* MainViewModel.swift in Sources */,
 				0DA0CF2F295CCB2B00B25061 /* GenderType.swift in Sources */,
+				0D9B71CF29E7F4CA0051262E /* MainTabBarController.swift in Sources */,
 				0DA0CF1F295CC33000B25061 /* ApiError.swift in Sources */,
 				0DA0CF2A295CC76000B25061 /* CharacterSet+Extension.swift in Sources */,
 				0DA0CF0E295C904C00B25061 /* UIFont+Extension.swift in Sources */,

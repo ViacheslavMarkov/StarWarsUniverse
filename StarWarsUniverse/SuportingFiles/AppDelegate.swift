@@ -9,34 +9,43 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    lazy var window: UIWindow? = .init(frame: UIScreen.main.bounds)
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        // Override point for customization after application launch.
+        
+        if UserDefaultsWrapper.get(key: .hasSeenOnboarding) == true {
+            showMainTabBarController()
+        } else {
+            showOnboardingViewController()
+        }
+        
         return true
     }
+}
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(
-        _ application: UIApplication,
-        configurationForConnecting connectingSceneSession: UISceneSession,
-        options: UIScene.ConnectionOptions
-    ) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+extension AppDelegate {
+    private func makeMainTabBarController() -> MainTabBarController? {
+        let mainViewModel = MainViewModel()
+        let mainViewController = MainViewController()
+        mainViewController.viewModel = mainViewModel
+        
+        let mainTabBarController = MainTabBarController(screens: [mainViewController])
+        
+        return mainTabBarController
     }
-
-    func application(
-        _ application: UIApplication,
-        didDiscardSceneSessions sceneSessions: Set<UISceneSession>
-    ) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running,
-        // this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    
+    func showMainTabBarController() {
+        window?.rootViewController = makeMainTabBarController()
+        window?.makeKeyAndVisible()
+    }
+    
+    private func showOnboardingViewController() {
+        let viewController = OnboardingViewController()
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
     }
 }
