@@ -7,6 +7,9 @@
 
 import UIKit
 
+typealias Snapshot = NSDiffableDataSourceSnapshot<Sections, StarWarsCellModel>
+typealias DataSource = UITableViewDiffableDataSource<Sections, StarWarsCellModel>
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -29,11 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     private func makeMainTabBarController() -> MainTabBarController? {
-        let mainViewModel = MainViewModel()
-        let mainViewController = MainViewController()
-        mainViewController.viewModel = mainViewModel
-        
-        let mainTabBarController = MainTabBarController(screens: [mainViewController])
+        let mainTabBarController = MainTabBarController(items: TabBarManager.shared.getTabBarItems())
         
         return mainTabBarController
     }

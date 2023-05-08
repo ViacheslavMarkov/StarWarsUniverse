@@ -7,18 +7,16 @@
 
 import UIKit
 
-protocol TabBarConforming: UIViewController {
-}
-
 final class MainTabBarController: UITabBarController {
     
-    private let screens: [TabBarConforming]
+    private let items: [Tab]
+    private let tabBarHeight: CGFloat = 60
+    private lazy var customTabBarView = CustomTabBarView(viewHeight: tabBarHeight, items: items)
     
     public init(
-        screens: [TabBarConforming]
+        items: [Tab]
     ) {
-        self.screens = screens
-        
+        self.items = items
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,6 +26,45 @@ final class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaultsWrapper.set(false, key: .hasSeenOnboarding)
+//        UserDefaultsWrapper.set(false, key: .hasSeenOnboarding)
+        
+        self.viewControllers = items.map {
+            let viewModel = TabBarItemViewModel(tabItem: $0)
+            let viewController = TabBarItemViewController(viewModel: viewModel)
+            return viewController
+        }
+        
+        setupCustomTabBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+}
+
+//MARK: - MainTabBarController
+private extension MainTabBarController {
+    func setupCustomTabBar() {
+        tabBar.backgroundColor = .customGray
+        tabBar.addSubview(customTabBarView)
+        
+        customTabBarView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            customTabBarView.heightAnchor.constraint(equalToConstant: tabBarHeight),
+            customTabBarView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: 8),
+            customTabBarView.leftAnchor.constraint(equalTo: tabBar.leftAnchor, constant:  tabBarHeight / 2),
+            customTabBarView.rightAnchor.constraint(equalTo: tabBar.rightAnchor, constant:  -tabBarHeight / 2)
+        ])
+        
+        customTabBarView.delegate = self
+    }
+}
+
+// MARK: - CustomTabBarViewDelegate
+extension MainTabBarController: CustomTabBarViewDelegate {
+    public func didTapItem(_ sender: CustomTabBarView, index: Int) {
+        selectedIndex = index
+        sender.updateUI(at: selectedIndex)
     }
 }

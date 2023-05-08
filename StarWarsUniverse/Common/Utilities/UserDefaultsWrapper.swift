@@ -20,5 +20,6 @@ enum UserDefaultsWrapper {
     
     static func resetDefaultsData() {
         self.set(nil, key: .hasSeenOnboarding)
+        self.set(nil, key: .listTabBarItems)
     }
 }

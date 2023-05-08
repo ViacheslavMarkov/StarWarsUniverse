@@ -42,4 +42,15 @@ enum ImageNameType: String {
     case circleCloseButton
     case emptyImage = ""
     case starWarsImage
+    
+    case personTabIcon
+    case planetTabIcon
+    case addButton
+    case starshipTabIcon
+    case vehicleTabIcon
+    case specieTabIcon
+    case filmTabIcon
+    
+    case plus
+    case minus
 }

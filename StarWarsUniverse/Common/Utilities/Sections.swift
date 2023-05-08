@@ -1,8 +1,8 @@
 //
-//  MainSection.swift
+//  Sections.swift
 //  StarWarsUniverse
 //
-//  Created by Viacheslav Markov on 27.12.2022.
+//  Created by Viacheslav Markov on 08.05.2023.
 //
 
 import Foundation
