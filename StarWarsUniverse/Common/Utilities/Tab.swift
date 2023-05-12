@@ -10,8 +10,8 @@ import UIKit
 enum Tab: String, CaseIterable {
     case people
     case starship
-    case specie
     case planet
+    case specie
     case vehicle
 
     var title: String {
@@ -35,9 +35,9 @@ enum Tab: String, CaseIterable {
             return 0
         case .starship:
             return 1
-        case .specie:
-            return 2
         case .planet:
+            return 2
+        case .specie:
             return 3
         case .vehicle:
             return 4
@@ -81,4 +81,35 @@ enum Tab: String, CaseIterable {
     var unselectedColor: UIColor? {
         return .titleGray
     }
+    
+    var pageURLString: String {
+        switch self {
+        case .people:
+            return EndPoint.people.urlString + "1"
+        case .starship:
+            return EndPoint.starships.urlString + "1"
+        case .specie:
+            return EndPoint.species.urlString + "1"
+        case .planet:
+            return EndPoint.planets.urlString + "1"
+        case .vehicle:
+            return EndPoint.vehicles.urlString + "1"
+        }
+    }
+    
+//    var responseType<T: RequestResponseProtocol>: T {
+//        return T.self as! T
+//        switch self {
+//        case .people:
+//            return PeopleResponse
+//        case .starship:
+//            return StarShipResponse
+//        case .specie:
+//            return SpecieResponse.self as! Decodable & Encodable
+//        case .planet:
+//            return PlanetsResponse.self as! Decodable & Encodable
+//        case .vehicle:
+//            return VehicleResponse.self as! Decodable & Encodable
+//        }
+//    }
 }

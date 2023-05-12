@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ImageNameType: String {
+enum ImageNameType: String, Codable {
     //MARK: - Planets
     case bluePlanet
     case greenPlanet
@@ -53,4 +53,8 @@ enum ImageNameType: String {
     
     case plus
     case minus
+    
+    case mammal
+    
+    case diggerCrawler
 }

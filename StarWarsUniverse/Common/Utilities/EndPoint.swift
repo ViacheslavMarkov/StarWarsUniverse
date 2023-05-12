@@ -36,6 +36,8 @@ enum EndPoint: String, EndPointProtocol {
     case species    = "species?page="
     case specie     = "species/"
     
+    case defaultAPI = ""
+    
     var url: URL? {
         return URL(string: baseURL + self.rawValue)
     }
