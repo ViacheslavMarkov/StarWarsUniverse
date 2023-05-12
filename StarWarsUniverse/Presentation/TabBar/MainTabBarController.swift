@@ -28,13 +28,53 @@ final class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 //        UserDefaultsWrapper.set(false, key: .hasSeenOnboarding)
         
+        delegate = self
+        
         self.viewControllers = items.map {
-            let viewModel = TabBarItemViewModel(tabItem: $0)
-            let viewController = TabBarItemViewController(viewModel: viewModel)
-            return viewController
+            switch $0.tag {
+            case 0:
+                var viewModel = TabBarItemViewModel<PeopleResponse>(tabItem: $0)
+                let viewController = TabBarItemViewController(viewModel: viewModel)
+                let nav = UINavigationController(rootViewController: viewController)
+                return nav
+            case 1:
+                var viewModel = TabBarItemViewModel<StarShipResponse>(tabItem: $0)
+                let viewController = TabBarItemViewController(viewModel: viewModel)
+                let nav = UINavigationController(rootViewController: viewController)
+                return nav
+            case 2:
+                var viewModel = TabBarItemViewModel<PlanetsResponse>(tabItem: $0)
+                let viewController = TabBarItemViewController(viewModel: viewModel)
+                let nav = UINavigationController(rootViewController: viewController)
+                return nav
+            case 3:
+                var viewModel = TabBarItemViewModel<SpecieResponse>(tabItem: $0)
+                let viewController = TabBarItemViewController(viewModel: viewModel)
+                let nav = UINavigationController(rootViewController: viewController)
+                return nav
+            case 4:
+                var viewModel = TabBarItemViewModel<VehicleResponse>(tabItem: $0)
+                let viewController = TabBarItemViewController(viewModel: viewModel)
+                let nav = UINavigationController(rootViewController: viewController)
+                return nav
+            default:
+                print("Item does not exist")
+                return UIViewController()
+            }
         }
         
         setupCustomTabBar()
+    }
+    
+    func createTabBarViewController(item: Tab) -> UINavigationController {
+        let viewModel = TabBarItemViewModel<PeopleResponse>(tabItem: item)
+        let viewController = TabBarItemViewController(viewModel: viewModel)
+        let nav = UINavigationController(rootViewController: viewController)
+        return nav
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,6 +98,8 @@ private extension MainTabBarController {
         ])
         
         customTabBarView.delegate = self
+        
+//        self.navigationController = UINavigationController(navigationBarClass: MainTabBarController, toolbarClass: nil)
     }
 }
 
@@ -66,5 +108,14 @@ extension MainTabBarController: CustomTabBarViewDelegate {
     public func didTapItem(_ sender: CustomTabBarView, index: Int) {
         selectedIndex = index
         sender.updateUI(at: selectedIndex)
+        navigationItem.title = "gfgfhfh"
+        navigationItem.titleView?.tintColor = .red
+        navigationItem.titleView?.backgroundColor = .green
+    }
+}
+
+extension MainTabBarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        navigationItem.title = viewController.navigationItem.title
     }
 }
