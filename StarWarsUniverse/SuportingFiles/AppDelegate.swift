@@ -30,15 +30,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+//MARK: - AppDelegate
 extension AppDelegate {
-    private func makeMainTabBarController() -> MainTabBarController? {
+    private func makeMainNavController() -> UINavigationController? {
         let mainTabBarController = MainTabBarController(items: TabBarManager.shared.getTabBarItems())
+        let navigationController = UINavigationController(rootViewController: mainTabBarController)
+        navigationController.navigationBar.prefersLargeTitles = true
         
-        return mainTabBarController
+        return navigationController
     }
     
     func showMainTabBarController() {
-        window?.rootViewController = makeMainTabBarController()
+        window?.rootViewController = makeMainNavController()
         window?.makeKeyAndVisible()
     }
     

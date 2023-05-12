@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CustomTabBarViewDelegate: AnyObject {
-    func didTapItem(_ sender: CustomTabBarView, index: Int)
+    func didTapItem(_ sender: CustomTabBarView, index: Int, selectedItem: Tab)
 }
 final class CustomTabBarView: UIView {
      weak var delegate: CustomTabBarViewDelegate?
@@ -76,7 +76,8 @@ final class CustomTabBarView: UIView {
     private func viewTapped(_ sender: UITapGestureRecognizer) {
         guard let view = sender.view as? TabBarItemView else { return }
         let index = view.tag
-        delegate?.didTapItem(self, index: index)
+        let selectedItem = items[index]
+        delegate?.didTapItem(self, index: index, selectedItem: selectedItem)
     }
     
     func updateUI(at newIndex: Int = 0) {
