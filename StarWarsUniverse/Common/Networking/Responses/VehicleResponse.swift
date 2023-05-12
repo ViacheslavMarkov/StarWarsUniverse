@@ -1,15 +1,14 @@
 //
-//  StarShipResponse.swift
+//  VehicleResponse.swift
 //  StarWarsUniverse
 //
-//  Created by Viacheslav Markov on 28.12.2022.
+//  Created by Viacheslav Markov on 11.05.2023.
 //
 
 import Foundation
 
-// MARK: - Welcome
-struct StarShipResponse: RequestResponseProtocol {
-    typealias T = StarShipModel
+struct VehicleResponse: RequestResponseProtocol {
+    typealias T = VehicleModel
     
     let id: UUID = UUID()
     

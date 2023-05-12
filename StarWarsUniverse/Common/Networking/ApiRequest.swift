@@ -17,6 +17,8 @@ enum ApiRequest {
     case starships(page: Int)
     case starship(number: Int)
     
+    case defaultAPI(urlString: String)
+    
     var url: String {
         switch self {
         case .people(page: let page):
@@ -31,6 +33,8 @@ enum ApiRequest {
             return EndPoint.starships.urlString + "\(page)"
         case .starship(number: let number):
             return EndPoint.starship.urlString + "\(number)"
+        case .defaultAPI(urlString: let urlString):
+            return urlString
         }
     }
     
@@ -41,7 +45,8 @@ enum ApiRequest {
                 .planets,
                 .planet,
                 .starships,
-                .starship:
+                .starship,
+                .defaultAPI:
             return "GET"
         }
     }
@@ -53,7 +58,8 @@ enum ApiRequest {
                 .planets,
                 .planet,
                 .starships,
-                .starship:
+                .starship,
+                .defaultAPI:
             return nil
         }
     }
@@ -65,7 +71,8 @@ enum ApiRequest {
                 .planets,
                 .planet,
                 .starships,
-                .starship:
+                .starship,
+                .defaultAPI:
             return nil
         }
     }
@@ -84,7 +91,8 @@ enum ApiRequest {
                 .planets,
                 .planet,
                 .starships,
-                .starship:
+                .starship,
+                .defaultAPI:
             break
         }
         return request

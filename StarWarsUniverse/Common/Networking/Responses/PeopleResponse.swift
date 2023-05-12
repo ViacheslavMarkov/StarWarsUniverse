@@ -8,9 +8,13 @@
 import Foundation
 
 // MARK: - PeopleResponse
-struct PeopleResponse: Codable {
-    let count   : Int
-    let next    : String?
-//    let previous: String?
-    let results : [People]
+struct PeopleResponse: RequestResponseProtocol {
+    typealias T = PeopleModel
+    
+    let id: UUID = UUID()
+    
+    let count: Int?
+    let next: String?
+    let previous: String?
+    let results: [T]
 }

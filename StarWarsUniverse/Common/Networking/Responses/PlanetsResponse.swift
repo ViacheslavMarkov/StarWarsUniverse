@@ -8,9 +8,13 @@
 import Foundation
 
 // MARK: - PlanetsResponse
-struct PlanetsResponse: Codable {
-    let count   : Int
-    let next    : String?
+struct PlanetsResponse: RequestResponseProtocol {
+    typealias T = PlanetModel
+    
+    let id: UUID = UUID()
+    
+    let count: Int?
+    let next: String?
     let previous: String?
-    let results : [Planet]
+    let results: [T]
 }
