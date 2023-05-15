@@ -216,12 +216,12 @@ final class MainView: UIView {
 
 //MARK: - ContainerTableViewDelegate
 extension MainView: ContainerTableViewDelegate {
-    func didTapItem(_ sender: ContainerTableView, index: Int) {
+    func didTapItem(_ sender: ContainerTableView, index: Int, item: StarWarsCellModel) {
         if let selectedItemName = selectedItemName {
             delegate?.didTapItem(self, selectedItemName: selectedItemName, index: index)
         }
     }
-    
+
     func didNeedDownloadNewData(_ sender: ContainerTableView, tag: Int) {
         delegate?.didNeedDownloadNewData(self, tag: tag)
     }

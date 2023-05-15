@@ -9,7 +9,7 @@ import UIKit
 
 protocol ContainerTableViewDelegate: AnyObject {
     func didNeedDownloadNewData(_ sender: ContainerTableView, tag: Int)
-    func didTapItem(_ sender: ContainerTableView, index: Int)
+    func didTapItem(_ sender: ContainerTableView, index: Int, item: StarWarsCellModel)
 }
 
 final class ContainerTableView: UIView {
@@ -58,7 +58,10 @@ final class ContainerTableView: UIView {
         }
     }
     
-    private func cellForRowAt(_ indexPath: IndexPath, with item: StarWarsCellModel) -> UITableViewCell {
+    private func cellForRowAt(
+        _ indexPath: IndexPath,
+        with item: StarWarsCellModel
+    ) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: PlanetTableViewCell.identifier) as? PlanetTableViewCell
         else {
@@ -93,6 +96,11 @@ extension ContainerTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didTapItem(self, index: indexPath.row)
+        guard
+            let section = dataSource?.snapshot().sectionIdentifiers[indexPath.section],
+            let item = dataSource?.snapshot().itemIdentifiers(inSection: section)[indexPath.row]
+        else { return }
+        
+        delegate?.didTapItem(self, index: indexPath.row, item: item)
     }
 }

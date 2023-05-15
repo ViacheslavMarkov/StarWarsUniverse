@@ -11,17 +11,20 @@ struct VehicleModel: ResponseModelProtocol {
     let id: UUID = UUID()
     
     var imageType: ImageNameType {
-//        return model.imageType
-        return ImageNameType.diggerCrawler
+        return VehicleType.init(rawValue: model ?? "")?.imageType ?? .unknown
     }
     
     var name        : String
-    let model       : String?//VehicleType
+    let model       : String?
     let urlString   : String?
     
     enum CodingKeys: String, CodingKey {
         case name
         case model
         case urlString = "url"
+    }
+    
+    var description: [String : Any] {
+        return [:]
     }
 }

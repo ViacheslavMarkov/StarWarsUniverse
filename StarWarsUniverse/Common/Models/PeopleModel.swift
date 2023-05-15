@@ -12,40 +12,56 @@ struct PeopleModel: ResponseModelProtocol {
     let id: UUID = UUID()
     
     var imageType: ImageNameType {
-        return gender?.imageType ?? ImageNameType.emptyImage
+        return GenderType.init(rawValue: gender ?? "")?.imageType ?? .unknown
     }
     
     let name        : String
-    let gender      : GenderType?
+    let gender      : String?
     let urlString   : String?
     
-//    let height      : String
-//    let mass        : String
-//    let films       : [String]
-//    let species     : [String]
-//    let vehicles    : [String]
-//    let starships   : [String]
-//    let hairColor   : String
-//    let skinColor   : String
-//    let eyeColor    : String
-//    let birthYear   : String
-//    let homeWorld   : String
+    let height      : String?
+    let mass        : String?
+    let films       : [String]?
+    let species     : [String]?
+    let vehicles    : [String]?
+    let starships   : [String]?
+    let hairColor   : String?
+    let skinColor   : String?
+    let eyeColor    : String?
+    let birthYear   : String?
+    let homeWorld   : String?
     
     enum CodingKeys: String, CodingKey {
         case name
         case gender
         case urlString  = "url"
         
-//        case height
-//        case mass
-//        case films
-//        case species
-//        case vehicles
-//        case starships
-//        case hairColor  = "hair_color"
-//        case skinColor  = "skin_color"
-//        case eyeColor   = "eye_color"
-//        case birthYear  = "birth_year"
-//        case homeWorld  = "homeworld"
+        case height
+        case mass
+        case films
+        case species
+        case vehicles
+        case starships
+        case hairColor  = "hair_color"
+        case skinColor  = "skin_color"
+        case eyeColor   = "eye_color"
+        case birthYear  = "birth_year"
+        case homeWorld  = "homeworld"
+    }
+    
+    var description: [String : Any] {
+        return [
+            "Name": name,
+            "Skin color": skinColor ?? "",
+            "Height": height ?? "",
+            "Birth year": birthYear ?? "",
+            "Home world": homeWorld ?? "",
+            "Mass": mass ?? "",
+            "Hair color": hairColor ?? "",
+            "Gender": gender ?? "",
+            "Number of films": films ?? [],
+            "Number of species": species ?? [],
+            "Number of starships": starships ?? []
+        ]
     }
 }

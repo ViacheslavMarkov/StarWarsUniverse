@@ -38,6 +38,24 @@ enum ImageNameType: String, Codable {
     case interseptorShip
     case starfighteShip
     case transporterShip
+    
+    //MARK: - Species
+    case amphibian
+    case gastropod
+    case reptile
+    case sentientIcon
+    case mammal
+    case unknown
+    
+    //MARK: - Vehicles
+    case diggerCrawler
+    case skyhopper
+    case airspeeder
+    case aerialPlatform
+    case twinPod
+    case juggernaut
+    case armoredTransport
+    case speederBike
  
     case circleCloseButton
     case emptyImage = ""
@@ -53,8 +71,4 @@ enum ImageNameType: String, Codable {
     
     case plus
     case minus
-    
-    case mammal
-    
-    case diggerCrawler
 }

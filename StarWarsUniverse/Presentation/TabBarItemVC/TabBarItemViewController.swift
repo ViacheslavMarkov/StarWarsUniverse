@@ -12,7 +12,6 @@ final class TabBarItemViewController: UIViewController {
     var viewModel: TabBarItemViewModelProtocol
     
     init(viewModel: TabBarItemViewModelProtocol) {
-//        tabBarItem = UITabBarItem(title: <#T##String?#>, image: <#T##UIImage?#>, selectedImage: <#T##UIImage?#>)
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.viewModel.delegate = self
@@ -31,7 +30,6 @@ final class TabBarItemViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         viewModel.fetchData()
-//        navigationController?.isNavigationBarHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,8 +42,6 @@ final class TabBarItemViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        navigationController?.navigationItem.title = viewModel.getNavTitle()
-//        navigationController?.navigationController?.title = viewModel.getNavTitle()
     }
 }
 
@@ -74,7 +70,7 @@ extension TabBarItemViewController: ContainerTableViewDelegate {
         viewModel.fetchData()
     }
     
-    func didTapItem(_ sender: ContainerTableView, index: Int) {
-        print("didTapItem")
+    func didTapItem(_ sender: ContainerTableView, index: Int, item: StarWarsCellModel) {
+        print("didTapItem", item)
     }
 }
