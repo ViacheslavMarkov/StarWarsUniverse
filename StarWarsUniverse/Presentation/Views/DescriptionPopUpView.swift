@@ -1,13 +1,13 @@
 //
-//  PresenterTableViewAlertView.swift
+//  DescriptionPopUpView.swift
 //  StarWarsUniverse
 //
-//  Created by Viacheslav Markov on 05.01.2023.
+//  Created by Viacheslav Markov on 15.05.2023.
 //
 
 import UIKit
 
-final class PresenterTableViewAlertView: UIView {
+final class DescriptionPopUpView: UIView {
     
     var closeCallback: (() -> Void)?
     
@@ -137,7 +137,7 @@ final class PresenterTableViewAlertView: UIView {
 }
 
 //MARK: - UITableViewDataSource
-extension PresenterTableViewAlertView: UITableViewDataSource {
+extension DescriptionPopUpView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dictionary.keys.count
     }
@@ -146,6 +146,7 @@ extension PresenterTableViewAlertView: UITableViewDataSource {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as? DescriptionTableViewCell
         else { return UITableViewCell() }
+        
         let keys = dictionary.compactMap({ $0.key }).sorted(by: { $0 > $1 })
         let key = keys[indexPath.row]
         let itemText = dictionary[key] ?? ""
@@ -155,7 +156,7 @@ extension PresenterTableViewAlertView: UITableViewDataSource {
 }
 
 //MARK: - UITableViewDelegate
-extension PresenterTableViewAlertView: UITableViewDelegate {
+extension DescriptionPopUpView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

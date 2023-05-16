@@ -7,7 +7,13 @@
 
 import UIKit
 
-final class LabelTableViewCell: UITableViewCell, NibCapable {
+protocol DescriptionTableViewCellDelegate: AnyObject {
+    func didTapItem(_ sender: DescriptionTableViewCell, urlString: String)
+}
+
+final class DescriptionTableViewCell: UITableViewCell, NibCapable {
+    weak var delegate: DescriptionTableViewCellDelegate?
+    
     private lazy var title: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -22,6 +28,12 @@ final class LabelTableViewCell: UITableViewCell, NibCapable {
         label.numberOfLines = 0
         return label
     }()
+    
+    var indexPath: IndexPath? = nil {
+        didSet {
+            title.isHidden = indexPath?.row != 0
+        }
+    }
 
     override init(
         style: UITableViewCell.CellStyle,
@@ -63,6 +75,34 @@ final class LabelTableViewCell: UITableViewCell, NibCapable {
     
     func configure(titleText: String, infoText: String) {
         title.text = "\(titleText) :"
-        info.text = "\(infoText)"
+        updateUI(infoText: infoText)
+    }
+    
+    private func updateUI(infoText: String) {
+        let isAttributed = infoText.contains("https")
+        let textColor: UIColor = isAttributed ? .systemBlue : .darkGray
+        if isAttributed {
+            let attributed = NSAttributedString
+                .strokeText(
+                    string: infoText,
+                    font: .customFont(type: .semiBold, size: 14),
+                    textColor: textColor)
+            info.attributedText = attributed
+            info.isUserInteractionEnabled = true
+            
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapLink))
+            info.addGestureRecognizer(gesture)
+        } else {
+            info.text = infoText
+        }
+    }
+    
+    @objc
+    private func didTapLink(_ sender: UITapGestureRecognizer) {
+        guard
+            let label = sender.view as? UILabel,
+            let urlString = label.text
+        else { return }
+        delegate?.didTapItem(self, urlString: urlString)
     }
 }

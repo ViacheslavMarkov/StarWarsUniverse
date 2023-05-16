@@ -13,9 +13,26 @@ protocol ContainerTableViewDelegate: AnyObject {
 }
 
 final class ContainerTableView: UIView {
+    private enum Defaults {
+        static let title = "Empty list!"
+        static let edgeInsets: CGFloat = 20
+    }
+    
     let tableView: UITableView = {
         let tableView = UITableView()
         return tableView
+    }()
+    
+    let emptyMessageLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .correctGreen
+        label.font = .customFont(type: .bold, size: 24)
+        label.minimumScaleFactor = 0.5
+        label.text = Defaults.title
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        return label
     }()
     
     weak var delegate: ContainerTableViewDelegate?
@@ -34,9 +51,17 @@ final class ContainerTableView: UIView {
     
     private func setup() {
         add([
-            tableView
+            tableView,
+            emptyMessageLabel
         ])
         tableView.autoPinSafeEdgesToSuperView()
+        
+        NSLayoutConstraint.activate([
+            emptyMessageLabel.centerX.constraint(equalTo: tableView.centerX),
+            emptyMessageLabel.centerY.constraint(equalTo: tableView.centerY),
+            emptyMessageLabel.leading.constraint(equalTo: tableView.leading, constant: Defaults.edgeInsets),
+            emptyMessageLabel.trailing.constraint(equalTo: tableView.trailing, constant: -Defaults.edgeInsets)
+        ])
         
         setupTableView()
     }
@@ -46,7 +71,7 @@ final class ContainerTableView: UIView {
         tableView.dataSource = dataSource
         tableView.delegate = self
         
-        tableView.register(PlanetTableViewCell.self, forCellReuseIdentifier: PlanetTableViewCell.identifier)
+        tableView.register(MainItemTableViewCell.self, forCellReuseIdentifier: MainItemTableViewCell.identifier)
     }
     
     private func prepareDataSource() {
@@ -63,7 +88,7 @@ final class ContainerTableView: UIView {
         with item: StarWarsCellModel
     ) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: PlanetTableViewCell.identifier) as? PlanetTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: MainItemTableViewCell.identifier) as? MainItemTableViewCell
         else {
             return UITableViewCell()
         }

@@ -1,5 +1,5 @@
 //
-//  PlanetView.swift
+//  MainItemView.swift
 //  StarWarsUniverse
 //
 //  Created by Viacheslav Markov on 01.01.2023.
@@ -7,11 +7,7 @@
 
 import UIKit
 
-//protocol MainViewDelegate: AnyObject {
-//    func filterTapped(_ sender: MainView, selectedIndex: Int)
-//}
-
-final class PlanetView: UIView {
+final class MainItemView: UIView {
     let image: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .clear

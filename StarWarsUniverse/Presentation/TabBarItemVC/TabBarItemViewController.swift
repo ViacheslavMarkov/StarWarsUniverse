@@ -45,13 +45,6 @@ final class TabBarItemViewController: UIViewController {
     }
 }
 
-//MARK: - TabBarItemViewModelDelegate
-extension TabBarItemViewController: TabBarItemViewModelDelegate {
-    func didUpdatedDataSource(_ sender: TabBarItemViewModelProtocol, models: [StarWarsCellModel]) {
-        tableViewContainer.applySnapshot(items: models)
-    }
-}
-
 //MARK: - TabBarItemViewController
 private extension TabBarItemViewController {
     func setupTableView() {
@@ -60,7 +53,38 @@ private extension TabBarItemViewController {
         ])
         tableViewContainer.autoPinSafeEdgesToSuperView()
         
+        tableViewContainer.emptyMessageLabel.isHidden = viewModel.getItemsCounter() != 0
+        
         tableViewContainer.delegate = self
+    }
+    
+    func pushToDescriptionScreen(urlString: String, name: String) {
+        let descriptionViewModel = DescriptionViewModel(urlString: urlString)
+        let descriptionViewController = DescriptionViewController(viewModel: descriptionViewModel)
+        
+        descriptionViewController.title = name
+
+        navigationController?.pushViewController(descriptionViewController, animated: true)
+    }
+}
+
+//MARK: - TabBarItemViewModelDelegate
+extension TabBarItemViewController: TabBarItemViewModelDelegate {
+    func showASndHideDownloadIndicator(_ sender: TabBarItemViewModelProtocol, isShow: Bool) {
+        tableViewContainer.emptyMessageLabel.isHidden = viewModel.getItemsCounter() != 0
+        print("showASndHideDownloadIndicator")
+    }
+    
+    func updateFailed(message: String) {
+        print("updateFailed")
+        tableViewContainer.emptyMessageLabel.isHidden = viewModel.getItemsCounter() != 0
+        presentBasicAlert(message: message, isAutomaticallyDismissed: true) {
+            print("presentBasicAlert")
+        }
+    }
+    
+    func didUpdatedDataSource(_ sender: TabBarItemViewModelProtocol, models: [StarWarsCellModel]) {
+        tableViewContainer.applySnapshot(items: models)
     }
 }
 
@@ -71,6 +95,11 @@ extension TabBarItemViewController: ContainerTableViewDelegate {
     }
     
     func didTapItem(_ sender: ContainerTableView, index: Int, item: StarWarsCellModel) {
-        print("didTapItem", item)
+        guard
+            let urlString = item.urlString,
+            let name = item.name
+        else { return }
+        
+        pushToDescriptionScreen(urlString: urlString, name: name)
     }
 }

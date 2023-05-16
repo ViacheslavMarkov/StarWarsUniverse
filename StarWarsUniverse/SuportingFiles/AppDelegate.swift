@@ -35,7 +35,8 @@ extension AppDelegate {
     private func makeMainNavController() -> UINavigationController? {
         let mainTabBarController = MainTabBarController(items: TabBarManager.shared.getTabBarItems())
         let navigationController = UINavigationController(rootViewController: mainTabBarController)
-        navigationController.navigationBar.prefersLargeTitles = true
+//        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.setup()
         
         return navigationController
     }

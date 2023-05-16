@@ -1,5 +1,5 @@
 //
-//  PlanetTableViewCell.swift
+//  MainItemTableViewCell.swift
 //  StarWarsUniverse
 //
 //  Created by Viacheslav Markov on 01.01.2023.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class PlanetTableViewCell: UITableViewCell, NibCapable {
-    private lazy var planetView: PlanetView = {
-        let planetView = PlanetView()
-        return planetView
+final class MainItemTableViewCell: UITableViewCell, NibCapable {
+    private lazy var view: MainItemView = {
+        let view = MainItemView()
+        return view
     }()
 
     override init(
@@ -25,8 +25,8 @@ final class PlanetTableViewCell: UITableViewCell, NibCapable {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        planetView.image.image = nil
-        planetView.label.text = nil
+        view.image.image = nil
+        view.label.text = nil
     }
     
     override func draw(_ rect: CGRect) {
@@ -35,14 +35,14 @@ final class PlanetTableViewCell: UITableViewCell, NibCapable {
     
     private func setup() {
         contentView.add([
-            planetView
+            view
         ])
         
-        planetView.autoPinEdgesToSuperView()
+        view.autoPinEdgesToSuperView()
         self.selectionStyle = .none
     }
     
     func configure(item: StarWarsCellModel) {
-        planetView.configure(item: item)
+        view.configure(item: item)
     }
 }
