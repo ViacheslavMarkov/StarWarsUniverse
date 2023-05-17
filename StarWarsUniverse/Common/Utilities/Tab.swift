@@ -9,23 +9,26 @@ import UIKit
 
 enum Tab: String, CaseIterable {
     case people
-    case starship
-    case planet
-    case specie
-    case vehicle
+    case starships
+    case planets
+    case species
+    case vehicles
+    case films
 
     var title: String {
         switch self {
         case .people:
             return "People"
-        case .planet:
+        case .planets:
             return "Planets"
-        case .starship:
+        case .starships:
             return "Starships"
-        case .vehicle:
+        case .vehicles:
             return "Vehicles"
-        case .specie:
+        case .species:
             return "Species"
+        case .films:
+            return "Film"
         }
     }
     
@@ -33,14 +36,16 @@ enum Tab: String, CaseIterable {
         switch self {
         case .people:
             return 0
-        case .starship:
+        case .starships:
             return 1
-        case .planet:
+        case .planets:
             return 2
-        case .specie:
+        case .species:
             return 3
-        case .vehicle:
+        case .vehicles:
             return 4
+        case .films:
+            return 5
         }
     }
 
@@ -51,26 +56,28 @@ enum Tab: String, CaseIterable {
                 name: .personTabIcon,
                 renderingMode: .alwaysTemplate
             )
-        case .planet:
+        case .planets:
             return .image(
                 name: .planetTabIcon,
                 renderingMode: .alwaysTemplate
             )
-        case .starship:
+        case .starships:
             return .image(
                 name: .starshipTabIcon,
                 renderingMode: .alwaysTemplate
             )
-        case .vehicle:
+        case .vehicles:
             return .image(
                 name: .vehicleTabIcon,
                 renderingMode: .alwaysTemplate
             )
-        case .specie:
+        case .species:
             return .image(
                 name: .specieTabIcon,
                 renderingMode: .alwaysTemplate
             )
+        default:
+            return UIImage()
         }
     }
     
@@ -86,30 +93,16 @@ enum Tab: String, CaseIterable {
         switch self {
         case .people:
             return EndPoint.people.urlString + "1"
-        case .starship:
+        case .starships:
             return EndPoint.starships.urlString + "1"
-        case .specie:
+        case .species:
             return EndPoint.species.urlString + "1"
-        case .planet:
+        case .planets:
             return EndPoint.planets.urlString + "1"
-        case .vehicle:
+        case .vehicles:
             return EndPoint.vehicles.urlString + "1"
+        case .films:
+            return EndPoint.films.urlString + "1"
         }
     }
-    
-//    var responseType<T: RequestResponseProtocol>: T {
-//        return T.self as! T
-//        switch self {
-//        case .people:
-//            return PeopleResponse
-//        case .starship:
-//            return StarShipResponse
-//        case .specie:
-//            return SpecieResponse.self as! Decodable & Encodable
-//        case .planet:
-//            return PlanetsResponse.self as! Decodable & Encodable
-//        case .vehicle:
-//            return VehicleResponse.self as! Decodable & Encodable
-//        }
-//    }
 }

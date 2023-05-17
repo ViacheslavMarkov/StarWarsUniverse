@@ -35,34 +35,35 @@ struct StarShipModel: ResponseModelProtocol {
         case name
         case model
         case urlString              = "url"
+        
         case manufacturer
-        case costInCredits          = "cost_in_credits"
         case length
-        case maxAtmospheringSpeed   = "max_atmosphering_speed"
         case crew
         case passengers
+        case pilots
+        case films
+        case costInCredits          = "cost_in_credits"
+        case maxAtmospheringSpeed   = "max_atmosphering_speed"
         case cargoCapacity          = "cargo_capacity"
         case hyperdriveRating       = "hyperdrive_rating"
         case starshipClass          = "starship_class"
-        case pilots
-        case films
     }
     
     var description: [String : Any] {
         return [
-            "Name": name,
-            "Model": model ?? "",
-            "Cost in credits": costInCredits ?? "",
-            "Manufacturer": manufacturer ?? "",
-            "Length": length ?? "",
+            "Name"                  : name,
+            "Model"                 : model ?? "",
+            "Cost in credits"       : costInCredits ?? "",
+            "Manufacturer"          : manufacturer ?? "",
+            "Length"                : length ?? "",
             "Max atmosphering speed": maxAtmospheringSpeed ?? "",
-            "Crew": crew ?? "",
-            "Passengers": passengers ?? "",
-            "Cargo capacity": cargoCapacity ?? "",
-            "Starship class": starshipClass ?? "",
-            "Hyperdrive rating": hyperdriveRating ?? "",
-            "Number of films": films ?? [],
-            "Pilots": pilots ?? []
+            "Crew"                  : crew ?? "",
+            "Passengers"            : passengers ?? "",
+            "Cargo capacity"        : cargoCapacity ?? "",
+            "Starship class"        : starshipClass ?? "",
+            "Hyperdrive rating"     : hyperdriveRating ?? "",
+            "Films"                 : films ?? [],
+            "Pilots"                : pilots ?? []
         ]
     }
 }

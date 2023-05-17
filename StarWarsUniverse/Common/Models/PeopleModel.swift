@@ -51,17 +51,17 @@ struct PeopleModel: ResponseModelProtocol {
     
     var description: [String : Any] {
         return [
-            "Name": name,
+            "Name"      : name,
             "Skin color": skinColor ?? "",
-            "Height": height ?? "",
+            "Height"    : height ?? "",
             "Birth year": birthYear ?? "",
             "Home world": homeWorld ?? "",
-            "Mass": mass ?? "",
+            "Mass"      : mass ?? "",
             "Hair color": hairColor ?? "",
-            "Gender": gender ?? "",
-            "Number of films": films ?? [],
-            "Number of species": species ?? [],
-            "Number of starships": starships ?? []
+            "Gender"    : gender ?? "",
+            "Films"     : films ?? [],
+            "Species"   : species ?? [],
+            "Starships" : starships ?? []
         ]
     }
 }

@@ -21,7 +21,7 @@ final class TabBarManager {
             }
             return list
         }
-        return [.people, .starship, .planet, .specie, .vehicle]
+        return [.people, .starships, .planets, .species, .vehicles]
     }
     
     func addNewItem(by name: String, completion: () -> Void) {

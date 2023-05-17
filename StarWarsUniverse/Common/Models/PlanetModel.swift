@@ -34,30 +34,30 @@ struct PlanetModel: ResponseModelProtocol {
         case climate
         case urlString = "url"
         
-        case rotationPeriod = "rotation_period"
-        case orbitalPeriod = "orbital_period"
         case diameter
         case gravity
         case terrain
-        case surfaceWater = "surface_water"
         case population
         case residents
         case films
+        case rotationPeriod = "rotation_period"
+        case orbitalPeriod = "orbital_period"
+        case surfaceWater = "surface_water"
     }
     
     var description: [String : Any] {
         return [
-            "Name": name,
-            "Population": population ?? "",
-            "Diameter": diameter ?? "",
-            "Gravity": gravity ?? "",
+            "Name"          : name,
+            "Population"    : population ?? "",
+            "Diameter"      : diameter ?? "",
+            "Gravity"       : gravity ?? "",
             "Orbital period": orbitalPeriod ?? "",
-            "Climate": climate ?? "",
+            "Climate"       : climate ?? "",
             "Rotation period": rotationPeriod ?? "",
-            "Number of films": films ?? [],
-            "Residents": residents ?? [],
-            "Terrain": terrain ?? "",
-            "Surface water": surfaceWater ?? ""
+            "Films"         : films ?? [],
+            "Residents"     : residents ?? [],
+            "Terrain"       : terrain ?? "",
+            "Surface water" : surfaceWater ?? ""
         ]
     }
 }
