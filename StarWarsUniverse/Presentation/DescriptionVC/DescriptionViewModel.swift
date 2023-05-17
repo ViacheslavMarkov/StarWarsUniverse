@@ -13,6 +13,9 @@ protocol DescriptionViewModelProtocol {
     func fetchItemData()
     func getDictionary() -> [String: Any]
     func updateData(at newUrlString: String)
+    
+    func getTitle() -> String?
+    func getTab() -> Tab?
 }
 
 protocol DescriptionViewModelDelegate: AnyObject {
@@ -21,12 +24,13 @@ protocol DescriptionViewModelDelegate: AnyObject {
     func updateFailed(message: String)
 }
 
-final class DescriptionViewModel: DescriptionViewModelProtocol {
+final class DescriptionViewModel<T: ResponseModelProtocol>: DescriptionViewModelProtocol {
     
     weak var delegate: DescriptionViewModelDelegate?
-    var response: PeopleModel?
+    var response: (any ResponseModelProtocol)?
     
     var urlString: String
+    private let manager = CacheDataManager.shared
     
     init(urlString: String) {
         self.urlString = urlString
@@ -35,7 +39,15 @@ final class DescriptionViewModel: DescriptionViewModelProtocol {
     func fetchItemData() {
         delegate?.showHideDownloadIndicator(self, isShow: true)
         
-        StarWarsService().fetchData(by: urlString) { [weak self] (result: Result<PeopleModel, ApiError>) in
+        if let model = manager.getFromCacheDictionary(by: urlString),
+           let res = model as? T {
+            response = res
+            self.delegate?.showHideDownloadIndicator(self, isShow: false)
+            self.delegate?.didFetchData(self)
+            return
+        }
+        
+        StarWarsService().fetchData(by: urlString) { [weak self] (result: Result<T, ApiError>) in
             guard
                 let self = self
             else {
@@ -48,6 +60,7 @@ final class DescriptionViewModel: DescriptionViewModelProtocol {
                 self.delegate?.updateFailed(message: failure.errorMessage)
             case .success(let success):
                 self.response = success
+                manager.addToCache(model: success, by: self.urlString)
                 self.delegate?.didFetchData(self)
             }
             self.delegate?.showHideDownloadIndicator(self, isShow: false)
@@ -56,12 +69,25 @@ final class DescriptionViewModel: DescriptionViewModelProtocol {
     
     func getDictionary() -> [String: Any] {
         guard let item = response else { return [:] }
-        return item.description
+        return item.description.nullKeyRemoval()
     }
     
     func updateData(at newUrlString: String) {
         urlString = newUrlString
         response = nil
-        fetchItemData()
+    }
+    
+    func getTab() -> Tab? {
+        let list = urlString.components(separatedBy: "/")
+        
+        guard
+            let firstIndex = list.firstIndex(of: "api"),
+              let tab = Tab(rawValue: list[firstIndex + 1])
+        else { return nil }
+        return tab
+    }
+    
+    func getTitle() -> String? {
+        return response?.name
     }
 }

@@ -17,8 +17,10 @@ protocol TabBarItemViewModelProtocol {
     var delegate: TabBarItemViewModelDelegate? { get set }
     
     func fetchData()
-    func getTitle() -> String
     func getItemsCounter() -> Int
+    
+    func getTabBarItem() -> Tab
+    func getSelectedItem(at urlString: String) -> (any ResponseModelProtocol)?
 }
 
 final class TabBarItemViewModel<T: RequestResponseProtocol>: TabBarItemViewModelProtocol {
@@ -53,7 +55,6 @@ final class TabBarItemViewModel<T: RequestResponseProtocol>: TabBarItemViewModel
             else {
                 self?.delegate?.updateFailed(message: "TabBarItemViewModel is missing!")
                 return
-                
             }
             
             switch result {
@@ -77,6 +78,7 @@ final class TabBarItemViewModel<T: RequestResponseProtocol>: TabBarItemViewModel
             let names = cacheModels.compactMap({ $0.name })
             if !names.contains(item.name ) {
                 cacheModels.append(item)
+                CacheDataManager.shared.addToCache(model: item, by: item.urlString ?? "")
             }
         })
         let models = createModels(models: list)
@@ -96,11 +98,16 @@ final class TabBarItemViewModel<T: RequestResponseProtocol>: TabBarItemViewModel
         return list
     }
     
-    func getTitle() -> String {
-        return tabItem.title
-    }
-    
     func getItemsCounter() -> Int {
         return cacheModels.count
+    }
+    
+    func getTabBarItem() -> Tab {
+        return tabItem
+    }
+    
+    func getSelectedItem(at urlString: String) -> (any ResponseModelProtocol)? {
+        let item = cacheModels.first(where: { $0.urlString == urlString })
+        return item
     }
 }

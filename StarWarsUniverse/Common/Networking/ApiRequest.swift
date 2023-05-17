@@ -8,31 +8,10 @@
 import Foundation
 
 enum ApiRequest {
-    case people(page: Int)
-    case person(number: Int)
-    
-    case planets(page: Int)
-    case planet(number: Int)
-    
-    case starships(page: Int)
-    case starship(number: Int)
-    
     case defaultAPI(urlString: String)
     
     var url: String {
         switch self {
-        case .people(page: let page):
-            return EndPoint.people.urlString + "\(page)"
-        case .person(number: let number):
-            return EndPoint.person.urlString + "\(number)"
-        case .planets(page: let page):
-            return EndPoint.planets.urlString + "\(page)"
-        case .planet(number: let number):
-            return EndPoint.planet.urlString + "\(number)"
-        case .starships(page: let page):
-            return EndPoint.starships.urlString + "\(page)"
-        case .starship(number: let number):
-            return EndPoint.starship.urlString + "\(number)"
         case .defaultAPI(urlString: let urlString):
             return urlString
         }
@@ -40,39 +19,21 @@ enum ApiRequest {
     
     var httpMethod: String {
         switch self {
-        case .people,
-                .person,
-                .planets,
-                .planet,
-                .starships,
-                .starship,
-                .defaultAPI:
+        case .defaultAPI:
             return "GET"
         }
     }
     
     var bodyParams: Data? {
         switch self {
-        case .people,
-                .person,
-                .planets,
-                .planet,
-                .starships,
-                .starship,
-                .defaultAPI:
+        case .defaultAPI:
             return nil
         }
     }
     
     var headerFields: [String: String]? {
         switch self {
-        case .people,
-                .person,
-                .planets,
-                .planet,
-                .starships,
-                .starship,
-                .defaultAPI:
+        case .defaultAPI:
             return nil
         }
     }
@@ -86,13 +47,7 @@ enum ApiRequest {
         request.allHTTPHeaderFields = headerFields
         
         switch self {
-        case .people,
-                .person,
-                .planets,
-                .planet,
-                .starships,
-                .starship,
-                .defaultAPI:
+        case .defaultAPI:
             break
         }
         return request

@@ -79,7 +79,7 @@ final class DescriptionTableViewCell: UITableViewCell, NibCapable {
     }
     
     private func updateUI(infoText: String) {
-        let isAttributed = infoText.contains("https")
+        let isAttributed = infoText.contains("https://swapi.dev/api")
         let textColor: UIColor = isAttributed ? .systemBlue : .darkGray
         if isAttributed {
             let attributed = NSAttributedString

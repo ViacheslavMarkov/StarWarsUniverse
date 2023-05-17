@@ -59,7 +59,16 @@ private extension TabBarItemViewController {
     }
     
     func pushToDescriptionScreen(urlString: String, name: String) {
-        let descriptionViewModel = DescriptionViewModel(urlString: urlString)
+        guard let item = viewModel.getSelectedItem(at: urlString) else { return }
+        goToDescriptionPage(item, urlString: urlString, name: name)
+    }
+    
+    func goToDescriptionPage<T: ResponseModelProtocol>(
+        _ type: T,
+        urlString: String,
+        name: String
+    ) {
+        let descriptionViewModel = DescriptionViewModel<T>(urlString: urlString)
         let descriptionViewController = DescriptionViewController(viewModel: descriptionViewModel)
         
         descriptionViewController.title = name

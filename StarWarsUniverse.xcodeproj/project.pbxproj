@@ -18,6 +18,9 @@
 		0D024036296219F80082287B /* DirectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D024035296219F80082287B /* DirectionType.swift */; };
 		0D024038296305B10082287B /* ClimateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D024037296305B10082287B /* ClimateType.swift */; };
 		0D02403A296310760082287B /* StarShipModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D024039296310760082287B /* StarShipModelType.swift */; };
+		0D0FF0962A1417EC00347904 /* CacheDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0FF0952A1417EC00347904 /* CacheDataManager.swift */; };
+		0D0FF0982A14AFF200347904 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0FF0972A14AFF200347904 /* FilmModel.swift */; };
+		0D0FF09A2A14B2B300347904 /* FilmType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0FF0992A14B2B300347904 /* FilmType.swift */; };
 		0D14412A2A13BAB90063C3EE /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1441292A13BAB90063C3EE /* NSAttributedString+Extension.swift */; };
 		0D299414295A2A990067ABC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D299413295A2A990067ABC2 /* AppDelegate.swift */; };
 		0D29941D295A2A9C0067ABC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941C295A2A9C0067ABC2 /* Assets.xcassets */; };
@@ -91,6 +94,9 @@
 		0D024035296219F80082287B /* DirectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionType.swift; sourceTree = "<group>"; };
 		0D024037296305B10082287B /* ClimateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateType.swift; sourceTree = "<group>"; };
 		0D024039296310760082287B /* StarShipModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarShipModelType.swift; sourceTree = "<group>"; };
+		0D0FF0952A1417EC00347904 /* CacheDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheDataManager.swift; sourceTree = "<group>"; };
+		0D0FF0972A14AFF200347904 /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
+		0D0FF0992A14B2B300347904 /* FilmType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmType.swift; sourceTree = "<group>"; };
 		0D1441292A13BAB90063C3EE /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		0D299410295A2A990067ABC2 /* StarWarsUniverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsUniverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D299413295A2A990067ABC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				0D9255F12A091E4500924943 /* TabBarManager.swift */,
+				0D0FF0952A1417EC00347904 /* CacheDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -294,6 +301,7 @@
 				0DA0CF38295CE2D600B25061 /* StarShipModel.swift */,
 				0DE5D99A2A0CEA440099653E /* VehicleModel.swift */,
 				0DE5D99E2A0CEFFE0099653E /* SpecieModel.swift */,
+				0D0FF0972A14AFF200347904 /* FilmModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 				0D9256002A09255500924943 /* Sections.swift */,
 				0DE5D9A22A0CF4130099653E /* VehicleType.swift */,
 				0DE5D9A42A0CF50D0099653E /* SpecieType.swift */,
+				0D0FF0992A14B2B300347904 /* FilmType.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -550,6 +559,7 @@
 				0DA0CF33295CCD1A00B25061 /* PlanetsResponse.swift in Sources */,
 				0D9255FB2A09222A00924943 /* TabBarItemViewModel.swift in Sources */,
 				0DA0CF39295CE2D600B25061 /* StarShipModel.swift in Sources */,
+				0D0FF0982A14AFF200347904 /* FilmModel.swift in Sources */,
 				0D02402C2961B8EE0082287B /* UIImage+Extension.swift in Sources */,
 				0D9255FF2A09238500924943 /* FilterType.swift in Sources */,
 				0D0240302961DF270082287B /* UITableView+Extension.swift in Sources */,
@@ -564,8 +574,10 @@
 				0D024036296219F80082287B /* DirectionType.swift in Sources */,
 				0DE5D9992A0CBEFB0099653E /* SpecieResponse.swift in Sources */,
 				0DA0CF2F295CCB2B00B25061 /* GenderType.swift in Sources */,
+				0D0FF09A2A14B2B300347904 /* FilmType.swift in Sources */,
 				0D9B71CF29E7F4CA0051262E /* MainTabBarController.swift in Sources */,
 				0DEE484D2A1235B900E7FE67 /* DescriptionView.swift in Sources */,
+				0D0FF0962A1417EC00347904 /* CacheDataManager.swift in Sources */,
 				0DA0CF1F295CC33000B25061 /* ApiError.swift in Sources */,
 				0DA0CF2A295CC76000B25061 /* CharacterSet+Extension.swift in Sources */,
 				0DEE48422A12227500E7FE67 /* DescriptionPopUpView.swift in Sources */,

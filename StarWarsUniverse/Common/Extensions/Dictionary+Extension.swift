@@ -26,4 +26,27 @@ extension Dictionary {
         .joined(separator: "&")
         .data(using: .utf8)
     }
+    
+    func nullKeyRemoval() -> Dictionary {
+        var dict = self
+        
+//        let keysToRemove = Array(dict.keys).filter { dict[$0] is NSNull }
+//        for key in keysToRemove {
+//            dict.removeValue(forKey: key)
+//        }
+        
+        dict.forEach { (key, value) in
+            if let value = value as? String,
+               value.isEmpty {
+                dict.removeValue(forKey: key)
+            }
+            
+            if let value = value as? [String],
+               value.isEmpty {
+                dict.removeValue(forKey: key)
+            }
+        }
+        
+        return dict
+    }
 }

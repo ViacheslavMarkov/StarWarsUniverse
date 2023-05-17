@@ -59,6 +59,7 @@ extension DescriptionViewController: DescriptionViewModelDelegate {
     func didFetchData(_ sender: DescriptionViewModelProtocol) {
         let dictionary = viewModel.getDictionary()
         setupDescriptionView(at: dictionary)
+        title = viewModel.getTitle()
     }
 }
 
@@ -66,5 +67,24 @@ extension DescriptionViewController: DescriptionViewModelDelegate {
 extension DescriptionViewController: DescriptionViewDelegate {
     func didTapNewURL(_ sender: DescriptionView, urlString: String) {
         viewModel.updateData(at: urlString)
+        
+        guard let tab = viewModel.getTab() else { return }
+        switch tab {
+        case .people:
+            viewModel = DescriptionViewModel<PeopleModel>(urlString: urlString)
+        case .starships:
+            viewModel = DescriptionViewModel<StarShipModel>(urlString: urlString)
+        case .planets:
+            viewModel = DescriptionViewModel<PlanetModel>(urlString: urlString)
+        case .species:
+            viewModel = DescriptionViewModel<SpecieModel>(urlString: urlString)
+        case .vehicles:
+            viewModel = DescriptionViewModel<VehicleModel>(urlString: urlString)
+        case .films:
+            viewModel = DescriptionViewModel<FilmModel>(urlString: urlString)
+        }
+        
+        viewModel.delegate = self
+        viewModel.fetchItemData()
     }
 }
