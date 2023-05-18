@@ -7,7 +7,8 @@
 
 import UIKit
 
-final class TabBarItemViewController: UIViewController {
+final class TabBarItemViewController<T: RequestResponseProtocol>: UIViewController {
+    var coordinator: TabBarItemCoordinator<T>?
     
     var viewModel: TabBarItemViewModelProtocol
     
@@ -34,6 +35,7 @@ final class TabBarItemViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationItem.setLeftBarButton(nil, animated: false)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,9 +60,13 @@ private extension TabBarItemViewController {
         tableViewContainer.delegate = self
     }
     
-    func pushToDescriptionScreen(urlString: String, name: String) {
+    func pushToDescriptionScreen(
+        urlString: String,
+        name: String
+    ) {
         guard let item = viewModel.getSelectedItem(at: urlString) else { return }
-        goToDescriptionPage(item, urlString: urlString, name: name)
+//        goToDescriptionPage(item, urlString: urlString, name: name)
+        coordinator?.goToDescriptionPage(item, urlString: urlString, name: name)
     }
     
     func goToDescriptionPage<T: ResponseModelProtocol>(
@@ -68,12 +74,14 @@ private extension TabBarItemViewController {
         urlString: String,
         name: String
     ) {
-        let descriptionViewModel = DescriptionViewModel<T>(urlString: urlString)
-        let descriptionViewController = DescriptionViewController(viewModel: descriptionViewModel)
         
-        descriptionViewController.title = name
-
-        navigationController?.pushViewController(descriptionViewController, animated: true)
+        coordinator?.goToDescriptionPage(type, urlString: urlString, name: name)
+//        let descriptionViewModel = DescriptionViewModel<T>(urlString: urlString)
+//        let descriptionViewController = DescriptionViewController(viewModel: descriptionViewModel)
+//        
+//        descriptionViewController.title = name
+//
+//        navigationController?.pushViewController(descriptionViewController, animated: true)
     }
 }
 

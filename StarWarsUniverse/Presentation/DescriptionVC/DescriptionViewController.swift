@@ -7,7 +7,8 @@
 
 import UIKit
 
-final class DescriptionViewController: UIViewController {
+final class DescriptionViewController<T: ResponseModelProtocol>: UIViewController {
+    var coordinator: DescriptionCoordinator<T>?
     
     var viewModel: DescriptionViewModelProtocol
     
@@ -58,7 +59,13 @@ extension DescriptionViewController: DescriptionViewModelDelegate {
     
     func didFetchData(_ sender: DescriptionViewModelProtocol) {
         let dictionary = viewModel.getDictionary()
-        setupDescriptionView(at: dictionary)
+        guard
+            let descriptionView = view.subviews.compactMap({ $0 as? DescriptionView }).first
+        else {
+            setupDescriptionView(at: dictionary)
+            return
+        }
+        descriptionView.updateUI(at: dictionary)
         title = viewModel.getTitle()
     }
 }

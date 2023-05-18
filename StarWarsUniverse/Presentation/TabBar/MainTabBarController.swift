@@ -8,16 +8,20 @@
 import UIKit
 
 final class MainTabBarController: UITabBarController {
-    
     private let items: [Tab]
     private let tabBarHeight: CGFloat = 60
     private lazy var customTabBarView = CustomTabBarView(viewHeight: tabBarHeight, items: items)
     private var selectedItem: Tab = .people
     
+    let navController: UINavigationController
+    
     public init(
-        items: [Tab]
+        items: [Tab],
+        navigationController: UINavigationController
     ) {
         self.items = items
+        self.navController = navigationController
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,30 +31,30 @@ final class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaultsWrapper.set(false, key: .hasSeenOnboarding)
+//        UserDefaultsWrapper.set(false, key: .hasSeenOnboarding)
         
         self.viewControllers = items.map {
             switch $0.tag {
             case 0:
-                let viewModel = TabBarItemViewModel<PeopleResponse>(tabItem: $0)
-                let viewController = TabBarItemViewController(viewModel: viewModel)
-                return viewController
+                let tabBarItemCoordinator = TabBarItemCoordinator<PeopleResponse>(navigationController: navController, tabItem: $0)
+                tabBarItemCoordinator.start()
+                return tabBarItemCoordinator.getViewController()
             case 1:
-                let viewModel = TabBarItemViewModel<StarShipResponse>(tabItem: $0)
-                let viewController = TabBarItemViewController(viewModel: viewModel)
-                return viewController
+                let tabBarItemCoordinator = TabBarItemCoordinator<StarShipResponse>(navigationController: navController, tabItem: $0)
+                tabBarItemCoordinator.start()
+                return tabBarItemCoordinator.getViewController()
             case 2:
-                let viewModel = TabBarItemViewModel<PlanetsResponse>(tabItem: $0)
-                let viewController = TabBarItemViewController(viewModel: viewModel)
-                return viewController
+                let tabBarItemCoordinator = TabBarItemCoordinator<PlanetsResponse>(navigationController: navController, tabItem: $0)
+                tabBarItemCoordinator.start()
+                return tabBarItemCoordinator.getViewController()
             case 3:
-                let viewModel = TabBarItemViewModel<SpecieResponse>(tabItem: $0)
-                let viewController = TabBarItemViewController(viewModel: viewModel)
-                return viewController
+                let tabBarItemCoordinator = TabBarItemCoordinator<SpecieResponse>(navigationController: navController, tabItem: $0)
+                tabBarItemCoordinator.start()
+                return tabBarItemCoordinator.getViewController()
             case 4:
-                let viewModel = TabBarItemViewModel<VehicleResponse>(tabItem: $0)
-                let viewController = TabBarItemViewController(viewModel: viewModel)
-                return viewController
+                let tabBarItemCoordinator = TabBarItemCoordinator<VehicleResponse>(navigationController: navController, tabItem: $0)
+                tabBarItemCoordinator.start()
+                return tabBarItemCoordinator.getViewController()
             default:
                 print("Item does not exist")
                 return UIViewController()
@@ -61,19 +65,13 @@ final class MainTabBarController: UITabBarController {
         createNavTitle()
     }
     
-    func createTabBarViewController(item: Tab) -> UINavigationController {
-        let viewModel = TabBarItemViewModel<PeopleResponse>(tabItem: item)
-        let viewController = TabBarItemViewController(viewModel: viewModel)
-        let nav = UINavigationController(rootViewController: viewController)
-        return nav
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navController.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 

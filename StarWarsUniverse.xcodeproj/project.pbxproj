@@ -41,6 +41,9 @@
 		0D9255FD2A0922CC00924943 /* TabBarItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9255FC2A0922CC00924943 /* TabBarItemViewController.swift */; };
 		0D9255FF2A09238500924943 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9255FE2A09238500924943 /* FilterType.swift */; };
 		0D9256012A09255500924943 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9256002A09255500924943 /* Sections.swift */; };
+		0D92965C2A1643DA00136DC3 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92965B2A1643DA00136DC3 /* MainTabBarCoordinator.swift */; };
+		0D92965E2A16452300136DC3 /* TabBarItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92965D2A16452300136DC3 /* TabBarItemCoordinator.swift */; };
+		0D9296602A164AAF00136DC3 /* DescriptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92965F2A164AAF00136DC3 /* DescriptionCoordinator.swift */; };
 		0D9B71CA29E7F4480051262E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B71C929E7F4480051262E /* OnboardingViewController.swift */; };
 		0D9B71CF29E7F4CA0051262E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B71CE29E7F4CA0051262E /* MainTabBarController.swift */; };
 		0D9B71D229E7F5740051262E /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B71D129E7F5740051262E /* UserDefaultsWrapper.swift */; };
@@ -123,6 +126,9 @@
 		0D9255FC2A0922CC00924943 /* TabBarItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemViewController.swift; sourceTree = "<group>"; };
 		0D9255FE2A09238500924943 /* FilterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		0D9256002A09255500924943 /* Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
+		0D92965B2A1643DA00136DC3 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		0D92965D2A16452300136DC3 /* TabBarItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemCoordinator.swift; sourceTree = "<group>"; };
+		0D92965F2A164AAF00136DC3 /* DescriptionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCoordinator.swift; sourceTree = "<group>"; };
 		0D9B71C929E7F4480051262E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		0D9B71CE29E7F4CA0051262E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		0D9B71D129E7F5740051262E /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
@@ -253,8 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				0D9B71C929E7F4480051262E /* OnboardingViewController.swift */,
-				0D8AE62C2A1626D20062E9BE /* OnboardingCoordinator.swift */,
 				0D8AE62E2A16280C0062E9BE /* OnboardingViewModel.swift */,
+				0D8AE62C2A1626D20062E9BE /* OnboardingCoordinator.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -263,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				0D9B71CE29E7F4CA0051262E /* MainTabBarController.swift */,
+				0D92965B2A1643DA00136DC3 /* MainTabBarCoordinator.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -427,6 +434,7 @@
 			children = (
 				0D9255FC2A0922CC00924943 /* TabBarItemViewController.swift */,
 				0D9255FA2A09222A00924943 /* TabBarItemViewModel.swift */,
+				0D92965D2A16452300136DC3 /* TabBarItemCoordinator.swift */,
 			);
 			path = TabBarItemVC;
 			sourceTree = "<group>";
@@ -436,6 +444,7 @@
 			children = (
 				0DEE48432A1222D600E7FE67 /* DescriptionViewController.swift */,
 				0DEE48452A12248400E7FE67 /* DescriptionViewModel.swift */,
+				0D92965F2A164AAF00136DC3 /* DescriptionCoordinator.swift */,
 			);
 			path = DescriptionVC;
 			sourceTree = "<group>";
@@ -540,6 +549,7 @@
 				0D024034296219BB0082287B /* UIScrollView+Extension.swift in Sources */,
 				0DEE48442A1222D600E7FE67 /* DescriptionViewController.swift in Sources */,
 				0DEE48492A12291700E7FE67 /* DownloadIndicatorView.swift in Sources */,
+				0D9296602A164AAF00136DC3 /* DescriptionCoordinator.swift in Sources */,
 				0D9B71D929E7FB680051262E /* OnboardingView.swift in Sources */,
 				0DE5D99D2A0CEE6B0099653E /* RequestResponseProtocol.swift in Sources */,
 				0D9255F72A091F6400924943 /* CustomTabBarView.swift in Sources */,
@@ -591,12 +601,14 @@
 				0D024032296209D20082287B /* ContainerTableView.swift in Sources */,
 				0D9B71D229E7F5740051262E /* UserDefaultsWrapper.swift in Sources */,
 				0D9255FD2A0922CC00924943 /* TabBarItemViewController.swift in Sources */,
+				0D92965C2A1643DA00136DC3 /* MainTabBarCoordinator.swift in Sources */,
 				0D8AE62B2A1625EB0062E9BE /* CoordinatorProtocol.swift in Sources */,
 				0D9B71CA29E7F4480051262E /* OnboardingViewController.swift in Sources */,
 				0DE5D9A12A0CF2CB0099653E /* ResponseModelProtocol.swift in Sources */,
 				0DE5D9972A0CBECD0099653E /* VehicleResponse.swift in Sources */,
 				0D024036296219F80082287B /* DirectionType.swift in Sources */,
 				0DE5D9992A0CBEFB0099653E /* SpecieResponse.swift in Sources */,
+				0D92965E2A16452300136DC3 /* TabBarItemCoordinator.swift in Sources */,
 				0DA0CF2F295CCB2B00B25061 /* GenderType.swift in Sources */,
 				0D0FF09A2A14B2B300347904 /* FilmType.swift in Sources */,
 				0D9B71CF29E7F4CA0051262E /* MainTabBarController.swift in Sources */,

@@ -33,16 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //MARK: - AppDelegate
 extension AppDelegate {
-    private func makeMainNavController() -> UINavigationController? {
-        let mainTabBarController = MainTabBarController(items: TabBarManager.shared.getTabBarItems())
-        let navigationController = UINavigationController(rootViewController: mainTabBarController)
+    func showMainTabBarController() {
+        let mainTabBarController = MainTabBarCoordinator(navigationController: navigationController)
+        mainTabBarController.start()
+        
         navigationController.setup()
         
-        return navigationController
-    }
-    
-    func showMainTabBarController() {
-        window?.rootViewController = makeMainNavController()
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
     

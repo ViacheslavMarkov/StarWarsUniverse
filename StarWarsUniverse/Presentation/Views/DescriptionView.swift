@@ -58,6 +58,12 @@ final class DescriptionView: UIView {
         tableView.isScrollEnabled = true
         tableView.separatorStyle = .none
     }
+    
+    func updateUI(at newDictionary: [String: Any]) {
+        dictionary = newDictionary
+        tableView.reloadData()
+//        tableView.dataSource.del
+    }
 }
 
 //MARK: - UITableViewDataSource

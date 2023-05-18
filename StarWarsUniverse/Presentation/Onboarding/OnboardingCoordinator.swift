@@ -19,6 +19,7 @@ final class OnboardingCoordinator: Coordinator {
         let viewModel = OnboardingViewModel()
         let viewController = OnboardingViewController(viewModel: viewModel)
         viewController.coordinator = self
+        
         navigationController.pushViewController(viewController, animated: false)
     }
 }

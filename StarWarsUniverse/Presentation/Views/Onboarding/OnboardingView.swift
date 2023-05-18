@@ -61,7 +61,7 @@ final class OnboardingView: UIView {
         imageAndTwoButtonView.nextButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         imageAndTwoButtonView.nextButton.tag = index
         imageAndTwoButtonView.skipButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        imageAndTwoButtonView.skipButton.tag = index
+        imageAndTwoButtonView.skipButton.tag = 3
         return imageAndTwoButtonView
     }
     
