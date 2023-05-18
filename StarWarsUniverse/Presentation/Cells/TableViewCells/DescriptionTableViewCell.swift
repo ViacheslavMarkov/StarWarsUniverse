@@ -47,6 +47,8 @@ final class DescriptionTableViewCell: UITableViewCell, NibCapable {
     
     public override func prepareForReuse() {
         super.prepareForReuse()
+        info.attributedText = nil
+        info.text = nil
     }
     
     override func draw(_ rect: CGRect) {

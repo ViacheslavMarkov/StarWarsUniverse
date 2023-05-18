@@ -14,7 +14,6 @@ typealias DataSource = UITableViewDiffableDataSource<Sections, StarWarsCellModel
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var window: UIWindow? = .init(frame: UIScreen.main.bounds)
-    private let navigationController = UINavigationController()
 
     func application(
         _ application: UIApplication,
@@ -34,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //MARK: - AppDelegate
 extension AppDelegate {
     func showMainTabBarController() {
+        let navigationController = UINavigationController()
         let mainTabBarController = MainTabBarCoordinator(navigationController: navigationController)
         mainTabBarController.start()
         
@@ -44,6 +44,7 @@ extension AppDelegate {
     }
     
     private func showOnboardingViewController() {
+        let navigationController = UINavigationController()
         let onboardingCoordinator = OnboardingCoordinator(navigationController: navigationController)
         onboardingCoordinator.start()
         

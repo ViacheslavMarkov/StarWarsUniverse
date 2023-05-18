@@ -62,7 +62,6 @@ final class DescriptionView: UIView {
     func updateUI(at newDictionary: [String: Any]) {
         dictionary = newDictionary
         tableView.reloadData()
-//        tableView.dataSource.del
     }
 }
 
