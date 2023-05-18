@@ -27,7 +27,7 @@ final class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UserDefaultsWrapper.set(false, key: .hasSeenOnboarding)
+        UserDefaultsWrapper.set(false, key: .hasSeenOnboarding)
         
         self.viewControllers = items.map {
             switch $0.tag {

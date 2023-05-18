@@ -26,8 +26,12 @@
 		0D29941D295A2A9C0067ABC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941C295A2A9C0067ABC2 /* Assets.xcassets */; };
 		0D299420295A2A9C0067ABC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D29941E295A2A9C0067ABC2 /* LaunchScreen.storyboard */; };
 		0D72205F29674E2700FB7402 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72205E29674E2700FB7402 /* UIViewController+Extension.swift */; };
-		0D72206129674EA600FB7402 /* PresenterTableViewAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */; };
 		0D7220652967639400FB7402 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7220642967639400FB7402 /* DescriptionTableViewCell.swift */; };
+		0D8AE62B2A1625EB0062E9BE /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8AE62A2A1625EB0062E9BE /* CoordinatorProtocol.swift */; };
+		0D8AE62D2A1626D20062E9BE /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8AE62C2A1626D20062E9BE /* OnboardingCoordinator.swift */; };
+		0D8AE62F2A16280C0062E9BE /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8AE62E2A16280C0062E9BE /* OnboardingViewModel.swift */; };
+		0D8AE6312A162FE00062E9BE /* ImageAndTwoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8AE6302A162FE00062E9BE /* ImageAndTwoButtonView.swift */; };
+		0D8AE6332A1631810062E9BE /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8AE6322A1631810062E9BE /* OnboardingModel.swift */; };
 		0D9255EF2A091DE400924943 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9255EE2A091DE400924943 /* UIColor+Extension.swift */; };
 		0D9255F22A091E4500924943 /* TabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9255F12A091E4500924943 /* TabBarManager.swift */; };
 		0D9255F42A091EA400924943 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9255F32A091EA400924943 /* Tab.swift */; };
@@ -104,8 +108,12 @@
 		0D29941F295A2A9C0067ABC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D299421295A2A9C0067ABC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D72205E29674E2700FB7402 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTableViewAlertView.swift; sourceTree = "<group>"; };
 		0D7220642967639400FB7402 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		0D8AE62A2A1625EB0062E9BE /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		0D8AE62C2A1626D20062E9BE /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		0D8AE62E2A16280C0062E9BE /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		0D8AE6302A162FE00062E9BE /* ImageAndTwoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndTwoButtonView.swift; sourceTree = "<group>"; };
+		0D8AE6322A1631810062E9BE /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		0D9255EE2A091DE400924943 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0D9255F12A091E4500924943 /* TabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarManager.swift; sourceTree = "<group>"; };
 		0D9255F32A091EA400924943 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
@@ -215,6 +223,14 @@
 			path = StarWarsUniverse;
 			sourceTree = "<group>";
 		};
+		0D8AE6292A1625D20062E9BE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0D8AE62A2A1625EB0062E9BE /* CoordinatorProtocol.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		0D9255F02A091E3700924943 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				0D9B71C929E7F4480051262E /* OnboardingViewController.swift */,
+				0D8AE62C2A1626D20062E9BE /* OnboardingCoordinator.swift */,
+				0D8AE62E2A16280C0062E9BE /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -253,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				0D9B71D829E7FB680051262E /* OnboardingView.swift */,
+				0D8AE6302A162FE00062E9BE /* ImageAndTwoButtonView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -302,6 +321,7 @@
 				0DE5D99A2A0CEA440099653E /* VehicleModel.swift */,
 				0DE5D99E2A0CEFFE0099653E /* SpecieModel.swift */,
 				0D0FF0972A14AFF200347904 /* FilmModel.swift */,
+				0D8AE6322A1631810062E9BE /* OnboardingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,7 +332,6 @@
 				0D9255F52A091F5600924943 /* TabBar */,
 				0D0240292961B69F0082287B /* MainItemView.swift */,
 				0D024031296209D20082287B /* ContainerTableView.swift */,
-				0D72206029674EA600FB7402 /* PresenterTableViewAlertView.swift */,
 				0D9B71DA29E7FF1D0051262E /* Onboarding */,
 				0DEE48412A12227500E7FE67 /* DescriptionPopUpView.swift */,
 				0DEE48482A12291700E7FE67 /* DownloadIndicatorView.swift */,
@@ -358,6 +377,7 @@
 		0DA0CF1B295CC1F200B25061 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0D8AE6292A1625D20062E9BE /* Coordinator */,
 				0D9255F02A091E3700924943 /* Managers */,
 				0DA0CF0A295C8FCC00B25061 /* Models */,
 				0DA0CF0C295C8FE600B25061 /* Utilities */,
@@ -524,8 +544,10 @@
 				0DE5D99D2A0CEE6B0099653E /* RequestResponseProtocol.swift in Sources */,
 				0D9255F72A091F6400924943 /* CustomTabBarView.swift in Sources */,
 				0DA0CF08295C8F9D00B25061 /* UIStackView+Extension.swift in Sources */,
+				0D8AE6312A162FE00062E9BE /* ImageAndTwoButtonView.swift in Sources */,
 				0DA0CF1D295CC28800B25061 /* NetworkRequestManager.swift in Sources */,
 				0D299414295A2A990067ABC2 /* AppDelegate.swift in Sources */,
+				0D8AE62D2A1626D20062E9BE /* OnboardingCoordinator.swift in Sources */,
 				0D02403A296310760082287B /* StarShipModelType.swift in Sources */,
 				0D9256012A09255500924943 /* Sections.swift in Sources */,
 				0DE5D9A52A0CF50D0099653E /* SpecieType.swift in Sources */,
@@ -559,15 +581,17 @@
 				0DA0CF33295CCD1A00B25061 /* PlanetsResponse.swift in Sources */,
 				0D9255FB2A09222A00924943 /* TabBarItemViewModel.swift in Sources */,
 				0DA0CF39295CE2D600B25061 /* StarShipModel.swift in Sources */,
+				0D8AE62F2A16280C0062E9BE /* OnboardingViewModel.swift in Sources */,
 				0D0FF0982A14AFF200347904 /* FilmModel.swift in Sources */,
+				0D8AE6332A1631810062E9BE /* OnboardingModel.swift in Sources */,
 				0D02402C2961B8EE0082287B /* UIImage+Extension.swift in Sources */,
 				0D9255FF2A09238500924943 /* FilterType.swift in Sources */,
 				0D0240302961DF270082287B /* UITableView+Extension.swift in Sources */,
 				0DE5D99F2A0CEFFE0099653E /* SpecieModel.swift in Sources */,
 				0D024032296209D20082287B /* ContainerTableView.swift in Sources */,
 				0D9B71D229E7F5740051262E /* UserDefaultsWrapper.swift in Sources */,
-				0D72206129674EA600FB7402 /* PresenterTableViewAlertView.swift in Sources */,
 				0D9255FD2A0922CC00924943 /* TabBarItemViewController.swift in Sources */,
+				0D8AE62B2A1625EB0062E9BE /* CoordinatorProtocol.swift in Sources */,
 				0D9B71CA29E7F4480051262E /* OnboardingViewController.swift in Sources */,
 				0DE5D9A12A0CF2CB0099653E /* ResponseModelProtocol.swift in Sources */,
 				0DE5D9972A0CBECD0099653E /* VehicleResponse.swift in Sources */,

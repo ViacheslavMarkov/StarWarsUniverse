@@ -8,7 +8,7 @@
 import UIKit
 
 protocol OnboardingViewDelegate: AnyObject {
-    func didTapMainButton(_ sender: OnboardingView)
+    func didTapMainButton(_ sender: OnboardingView, tag: Int)
 }
 
 final class OnboardingView: UIView {
@@ -16,17 +16,14 @@ final class OnboardingView: UIView {
     weak var delegate: OnboardingViewDelegate?
     private let buttonHeight: CGFloat = 56
     
-    private let image: UIImageView = {
-        let image = UIImageView()
-        image.backgroundColor = .clear
-        image.image = .image(name: .starWarsImage, renderingMode: .alwaysOriginal)
-        image.contentMode = .scaleToFill
-        return image
-    }()
-    
-    private let button: UIButton = {
-        let button = UIButton()
-        return button
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.isPagingEnabled = true
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.bounces = false
+        scrollView.contentInsetAdjustmentBehavior = .never
+        return scrollView
     }()
     
     init() {
@@ -44,31 +41,65 @@ final class OnboardingView: UIView {
     
     private func setup() {
         add([
-            image,
-            button
+            scrollView
         ])
         
-        image.autoPinEdgesToSuperView()
-        
-        NSLayoutConstraint.activate([
-            button.leading.constraint(equalTo: leading, constant: 36),
-            button.trailing.constraint(equalTo: trailing, constant: -36),
-            button.bottom.constraint(equalTo: bottom, constant: -50),
-            button.height.constraint(equalToConstant: buttonHeight)
-        ])
-        
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        scrollView.autoPinEdgesToSuperView()
     }
     
     @objc
     private func buttonTapped(_ sender: UIButton) {
-        delegate?.didTapMainButton(self)
+        delegate?.didTapMainButton(self, tag: sender.tag == 3 ? sender.tag : scrollView.currentPage())
     }
     
-    func configure() {
-        button.setTitle(text: "Go to main screen")
-        button.setTitleColor(color: .white)
-        button.set(cornerRadius: 8)
-        button.backgroundColor = .lightGray.withAlphaComponent(0.8)
+    private func makeImageAndTwoButtonView (
+        model: OnboardingModel,
+        index: Int
+    ) -> ImageAndTwoButtonView {
+        let imageAndTwoButtonView = ImageAndTwoButtonView()
+        imageAndTwoButtonView.configure(at: model)
+        imageAndTwoButtonView.nextButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        imageAndTwoButtonView.nextButton.tag = index
+        imageAndTwoButtonView.skipButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        imageAndTwoButtonView.skipButton.tag = index
+        return imageAndTwoButtonView
+    }
+    
+    func configureScrollViewContent(models: [OnboardingModel]) {
+        for (index, model) in models.enumerated() {
+            let imageAndTwoButtonView = makeImageAndTwoButtonView(model: model, index: index)
+            scrollView.add([imageAndTwoButtonView])
+
+            NSLayoutConstraint.activate([
+                imageAndTwoButtonView.top.constraint(equalTo: scrollView.top),
+                imageAndTwoButtonView.bottom.constraint(equalTo: scrollView.bottom),
+                imageAndTwoButtonView.width.constraint(equalTo: scrollView.width),
+                imageAndTwoButtonView.height.constraint(equalTo: scrollView.height)
+            ])
+
+            switch index {
+            case 0:
+                NSLayoutConstraint.activate([
+                    imageAndTwoButtonView.leading.constraint(equalTo: scrollView.leading)
+                ])
+
+                if models.count == 1 {
+                    NSLayoutConstraint.activate([
+                        imageAndTwoButtonView.trailing.constraint(equalTo: scrollView.trailing)
+                    ])
+                }
+            case models.count - 1:
+                let prevView = scrollView.subviews[index - 1]
+                NSLayoutConstraint.activate([
+                    imageAndTwoButtonView.leading.constraint(equalTo: prevView.trailing),
+                    imageAndTwoButtonView.trailing.constraint(equalTo: scrollView.trailing)
+                ])
+            default:
+                let prevView = scrollView.subviews[index - 1]
+                NSLayoutConstraint.activate([
+                    imageAndTwoButtonView.leading.constraint(equalTo: prevView.trailing)
+                ])
+            }
+        }
     }
 }

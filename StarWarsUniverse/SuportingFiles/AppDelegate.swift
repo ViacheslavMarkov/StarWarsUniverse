@@ -14,6 +14,7 @@ typealias DataSource = UITableViewDiffableDataSource<Sections, StarWarsCellModel
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var window: UIWindow? = .init(frame: UIScreen.main.bounds)
+    private let navigationController = UINavigationController()
 
     func application(
         _ application: UIApplication,
@@ -35,7 +36,6 @@ extension AppDelegate {
     private func makeMainNavController() -> UINavigationController? {
         let mainTabBarController = MainTabBarController(items: TabBarManager.shared.getTabBarItems())
         let navigationController = UINavigationController(rootViewController: mainTabBarController)
-//        navigationController.navigationBar.prefersLargeTitles = true
         navigationController.setup()
         
         return navigationController
@@ -47,8 +47,10 @@ extension AppDelegate {
     }
     
     private func showOnboardingViewController() {
-        let viewController = OnboardingViewController()
-        window?.rootViewController = viewController
+        let onboardingCoordinator = OnboardingCoordinator(navigationController: navigationController)
+        onboardingCoordinator.start()
+        
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 }

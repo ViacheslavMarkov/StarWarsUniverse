@@ -33,24 +33,6 @@ extension UIViewController {
         alertController.addAction(alertAction)
         present(alertController, animated: true)
     }
-    
-    func presentTableViewAlert(
-        title: String,
-        dictionary: [String : String]
-    ) {
-        let view = PresenterTableViewAlertView(title: title, dictionary: dictionary)
-        
-        let viewController = UIViewController()
-        viewController.view.addSubview(view)
-        
-        view.autoPinEdgesToSuperView()
-        view.closeCallback = {
-            viewController.dismiss(animated: true)
-        }
-        
-        viewController.modalPresentationStyle = .overCurrentContext
-        present(viewController, animated: true)
-    }
 }
 
 extension UIViewController {

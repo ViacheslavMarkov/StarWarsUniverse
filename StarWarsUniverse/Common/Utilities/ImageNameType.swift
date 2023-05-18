@@ -73,4 +73,9 @@ enum ImageNameType: String, Codable {
     case minus
     
     case filmIcon
+    
+    case episode1
+    case episode2
+    case episode3
+    case episode4
 }
