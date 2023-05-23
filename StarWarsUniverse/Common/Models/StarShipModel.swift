@@ -12,7 +12,7 @@ struct StarShipModel: ResponseModelProtocol {
     let id: UUID = UUID()
     
     var imageType: ImageNameType {
-        return StarShipModelType.init(rawValue: model ?? "")?.imageType ?? .unknown
+        return StarShipModelType.init(rawValue: model ?? "")?.imageType ?? .emptyImage
     }
     
     let name                : String

@@ -11,7 +11,7 @@ struct VehicleModel: ResponseModelProtocol {
     let id: UUID = UUID()
     
     var imageType: ImageNameType {
-        return VehicleType.init(rawValue: model ?? "")?.imageType ?? .unknown
+        return VehicleType.init(rawValue: model ?? "")?.imageType ?? .emptyImage
     }
     
     var name            : String

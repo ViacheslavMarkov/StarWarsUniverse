@@ -12,7 +12,7 @@ struct PlanetModel: ResponseModelProtocol {
     let id: UUID = UUID()
     
     var imageType: ImageNameType {
-        return ClimateType.init(rawValue: climate ?? "")?.imageType ?? .unknown
+        return ClimateType.init(rawValue: climate ?? "")?.imageType ?? .emptyImage
     }
     
     let name            : String

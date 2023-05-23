@@ -12,7 +12,7 @@ struct PeopleModel: ResponseModelProtocol {
     let id: UUID = UUID()
     
     var imageType: ImageNameType {
-        return GenderType.init(rawValue: gender ?? "")?.imageType ?? .unknown
+        return GenderType.init(rawValue: gender ?? "")?.imageType ?? .emptyImage
     }
     
     let name        : String

@@ -11,7 +11,7 @@ struct SpecieModel: ResponseModelProtocol {
     let id: UUID = UUID()
     
     var imageType: ImageNameType {
-        return SpecieType.init(rawValue: classification ?? "")?.imageType ?? .unknown
+        return SpecieType.init(rawValue: classification ?? "")?.imageType ?? .emptyImage
     }
     
     let name                : String

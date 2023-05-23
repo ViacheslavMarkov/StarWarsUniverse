@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct StarWarsCellModel: Hashable {
+struct StarWarsCellModel: Identifiable, Hashable {
+    let id = UUID()
+    
     let name            : String?
     let imageNameType   : ImageNameType?
     let urlString       : String?
