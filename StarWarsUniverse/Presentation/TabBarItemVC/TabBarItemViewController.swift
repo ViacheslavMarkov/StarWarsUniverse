@@ -65,7 +65,6 @@ private extension TabBarItemViewController {
         name: String
     ) {
         guard let item = viewModel.getSelectedItem(at: urlString) else { return }
-//        goToDescriptionPage(item, urlString: urlString, name: name)
         coordinator?.goToDescriptionPage(item, urlString: urlString, name: name)
     }
     
@@ -76,12 +75,6 @@ private extension TabBarItemViewController {
     ) {
         
         coordinator?.goToDescriptionPage(type, urlString: urlString, name: name)
-//        let descriptionViewModel = DescriptionViewModel<T>(urlString: urlString)
-//        let descriptionViewController = DescriptionViewController(viewModel: descriptionViewModel)
-//        
-//        descriptionViewController.title = name
-//
-//        navigationController?.pushViewController(descriptionViewController, animated: true)
     }
 }
 
