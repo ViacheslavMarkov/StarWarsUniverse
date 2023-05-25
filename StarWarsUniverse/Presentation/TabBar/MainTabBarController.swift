@@ -33,32 +33,8 @@ final class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 //        UserDefaultsWrapper.set(false, key: .hasSeenOnboarding)
         
-        self.viewControllers = items.map {
-            switch $0.tag {
-            case 0:
-                let tabBarItemCoordinator = TabBarItemCoordinator<PeopleResponse>(navigationController: navController, tabItem: $0)
-                tabBarItemCoordinator.start()
-                return tabBarItemCoordinator.getViewController()
-            case 1:
-                let tabBarItemCoordinator = TabBarItemCoordinator<StarShipResponse>(navigationController: navController, tabItem: $0)
-                tabBarItemCoordinator.start()
-                return tabBarItemCoordinator.getViewController()
-            case 2:
-                let tabBarItemCoordinator = TabBarItemCoordinator<PlanetsResponse>(navigationController: navController, tabItem: $0)
-                tabBarItemCoordinator.start()
-                return tabBarItemCoordinator.getViewController()
-            case 3:
-                let tabBarItemCoordinator = TabBarItemCoordinator<SpecieResponse>(navigationController: navController, tabItem: $0)
-                tabBarItemCoordinator.start()
-                return tabBarItemCoordinator.getViewController()
-            case 4:
-                let tabBarItemCoordinator = TabBarItemCoordinator<VehicleResponse>(navigationController: navController, tabItem: $0)
-                tabBarItemCoordinator.start()
-                return tabBarItemCoordinator.getViewController()
-            default:
-                print("Item does not exist")
-                return UIViewController()
-            }
+        self.viewControllers = items.map { item in
+            return createTabBarViewController(type: item.defaultResponseType, tabItem: item)
         }
         
         setupCustomTabBar()
@@ -96,6 +72,12 @@ private extension MainTabBarController {
     func createNavTitle() {
         let title = selectedItem.title
         navigationItem.title = title
+    }
+    
+    func createTabBarViewController<T: RequestResponseProtocol>(type: T, tabItem: Tab) -> UIViewController {
+        let tabBarItemCoordinator = TabBarItemCoordinator<T>(navigationController: navController, tabItem: tabItem)
+        tabBarItemCoordinator.start()
+        return tabBarItemCoordinator.getViewController()
     }
 }
 
