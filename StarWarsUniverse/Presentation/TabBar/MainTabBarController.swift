@@ -91,6 +91,7 @@ extension MainTabBarController: CustomTabBarViewDelegate {
     }
 }
 
+// MARK: - UITabBarControllerDelegate
 extension MainTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         navigationItem.title = viewController.navigationItem.title
